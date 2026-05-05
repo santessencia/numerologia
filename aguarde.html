@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chave da Essência — Mapa registado!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/captacao.css" />
+</head>
+<body>
+  <div class="form-page">
+    <img src="/assets/logo.svg" alt="Chave da Essência" class="form-logo" style="height:56px;margin-bottom:32px;" />
+
+    <div class="form-card" style="max-width:480px;text-align:center;padding:56px 48px;">
+      <div style="font-size:2.5rem;margin-bottom:20px;">✦</div>
+      <h1 class="form-titulo" style="margin-bottom:12px;">Mapa registado!</h1>
+      <p class="form-subtitulo" style="margin-bottom:32px;line-height:1.8;">
+        O seu Mapa Numerológico foi registado com sucesso.<br/>
+        Receberá o PDF completo no e-mail <strong id="email-confirmacao"></strong> em até 48 horas.
+      </p>
+      <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+      <p style="margin-top:28px;font-size:0.85rem;color:var(--texto-suave);line-height:1.7;">
+        Enquanto isso, partilhe este evento com quem você ama —<br/>
+        os números revelam o que a alma já sabe. ✦
+      </p>
+    </div>
+
+    <p class="form-rodape" style="margin-top:32px;">
+      Chave da Essência · Numerologia Pitagórica
+    </p>
+  </div>
+
+  <script>
+    const email = sessionStorage.getItem('lead_email') || '';
+    const el = document.getElementById('email-confirmacao');
+    if (el && email) el.textContent = email;
+  </script>
+</body>
+</html>

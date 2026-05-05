@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chave da Essência — Como quer receber o seu Mapa?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/obrigado.css" />
+</head>
+<body>
+  <div class="obg-page">
+
+    <header class="obg-header">
+      <img src="/assets/logo.svg" alt="Chave da Essência" class="obg-logo" />
+    </header>
+
+    <div class="obg-intro">
+      <p class="obg-saudacao">Olá, <strong id="obg-nome"></strong> ✦</p>
+      <h1 class="obg-titulo">Como quer receber o seu Mapa?</h1>
+      <p class="obg-subtitulo">O seu Mapa Numerológico está pronto para ser gerado. Escolha a opção que faz mais sentido para você agora.</p>
+    </div>
+
+    <div class="obg-planos">
+
+      <!-- Plano Grátis -->
+      <div class="plano plano-gratis">
+        <div class="plano-badge-wrapper">
+          <span class="plano-badge plano-badge-gratis">Gratuito</span>
+        </div>
+        <div class="plano-icone">✉️</div>
+        <h2 class="plano-titulo">Receber por E-mail</h2>
+        <p class="plano-prazo">em até 48 horas</p>
+        <ul class="plano-lista">
+          <li>✓ PDF completo do Mapa Numerológico</li>
+          <li>✓ Todas as 7 secções (A–G)</li>
+          <li>✓ Enviado para o seu e-mail</li>
+        </ul>
+        <p class="plano-preco">R$ 0</p>
+        <button class="plano-btn plano-btn-gratis" id="btn-gratis">
+          Quero receber por e-mail
+        </button>
+        <p class="plano-nota">Entrega em até 48h no e-mail cadastrado</p>
+      </div>
+
+      <!-- Plano Imediato — destaque -->
+      <div class="plano plano-imediato plano-destaque">
+        <div class="plano-badge-wrapper">
+          <span class="plano-badge plano-badge-destaque">⚡ Mais popular</span>
+        </div>
+        <div class="plano-icone">⚡</div>
+        <h2 class="plano-titulo">Acesso Imediato</h2>
+        <p class="plano-prazo">agora mesmo</p>
+        <ul class="plano-lista">
+          <li>✓ Tudo do plano gratuito</li>
+          <li>✓ Acesso imediato ao mapa completo</li>
+          <li>✓ PDF para baixar na hora</li>
+          <li>✓ Ano Pessoal + Cristal do seu número</li>
+        </ul>
+        <p class="plano-preco">R$ 27 <span class="plano-preco-de">R$ 97</span></p>
+        <button class="plano-btn plano-btn-imediato" id="btn-imediato">
+          Quero acesso agora
+        </button>
+        <p class="plano-nota">Pagamento seguro via Mercado Pago</p>
+      </div>
+
+      <!-- Plano VIP -->
+      <div class="plano plano-vip">
+        <div class="plano-badge-wrapper">
+          <span class="plano-badge plano-badge-vip">✦ VIP</span>
+        </div>
+        <div class="plano-icone">✦</div>
+        <h2 class="plano-titulo">Mapa VIP</h2>
+        <p class="plano-prazo">acesso imediato</p>
+        <ul class="plano-lista">
+          <li>✓ Tudo do Acesso Imediato</li>
+          <li>✓ Análise aprofundada personalizada</li>
+          <li>✓ Orientações práticas para o seu momento atual</li>
+          <li>✓ Suporte via WhatsApp por 7 dias</li>
+        </ul>
+        <p class="plano-preco">R$ 97</p>
+        <button class="plano-btn plano-btn-vip" id="btn-vip">
+          Quero o Mapa VIP
+        </button>
+        <p class="plano-nota">Pagamento seguro via Mercado Pago</p>
+      </div>
+
+    </div>
+
+    <!-- Cupom -->
+    <div class="obg-cupom">
+      <p class="obg-cupom-texto">Tem um cupom de acesso?</p>
+      <div class="obg-cupom-form">
+        <input class="obg-cupom-input" type="text" id="input-cupom"
+          placeholder="Digite o código" maxlength="20" />
+        <button class="obg-cupom-btn" id="btn-cupom">Aplicar</button>
+      </div>
+      <p class="obg-cupom-feedback" id="cupom-feedback"></p>
+    </div>
+
+    <p class="obg-seguranca">
+      🔒 Pagamento processado com segurança pelo Mercado Pago · Pix, cartão de crédito ou débito
+    </p>
+
+  </div>
+
+  <script type="module">
+    // Cupons válidos — formato: CODIGO: 'imediato' | 'vip'
+    const CUPONS = {
+      'EVENTO2025': 'imediato',
+      'VIP2025':    'vip',
+    };
+
+    const nome = sessionStorage.getItem('lead_nome') || '';
+    document.getElementById('obg-nome').textContent = nome.split(' ')[0] || 'bem-vindo';
+
+    // Redireciona se não tiver dados
+    if (!sessionStorage.getItem('numerologia_dados')) {
+      window.location.href = '/captacao.html';
+    }
+
+    async function iniciarPagamento(plano) {
+      const email    = sessionStorage.getItem('lead_email')    || '';
+      const whatsapp = sessionStorage.getItem('lead_whatsapp') || '';
+
+      const btn = document.getElementById(`btn-${plano}`);
+      btn.textContent = 'A processar…';
+      btn.disabled = true;
+
+      try {
+        const resp = await fetch('/api/criar-pagamento', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, whatsapp, plano }),
+        });
+        const dados = await resp.json();
+
+        if (dados.url) {
+          window.location.href = dados.url;
+        } else {
+          throw new Error('Sem URL de pagamento');
+        }
+      } catch {
+        btn.textContent = plano === 'imediato' ? 'Quero acesso agora' : 'Quero o Mapa VIP';
+        btn.disabled = false;
+        alert('Erro ao processar. Por favor tente novamente.');
+      }
+    }
+
+    document.getElementById('btn-gratis').addEventListener('click', () => {
+      // Plano grátis — mostra confirmação e vai para página de agradecimento simples
+      sessionStorage.setItem('plano_escolhido', 'gratis');
+      window.location.href = '/aguarde.html';
+    });
+
+    document.getElementById('btn-imediato').addEventListener('click', () => iniciarPagamento('imediato'));
+    document.getElementById('btn-vip').addEventListener('click',      () => iniciarPagamento('vip'));
+
+    // Lógica de cupom
+    document.getElementById('btn-cupom').addEventListener('click', () => {
+      const codigo   = document.getElementById('input-cupom').value.trim().toUpperCase();
+      const feedback = document.getElementById('cupom-feedback');
+
+      if (!codigo) return;
+
+      if (CUPONS[codigo]) {
+        const plano = CUPONS[codigo];
+        feedback.textContent = `✓ Cupom válido! A redirecionar para o mapa…`;
+        feedback.style.color = '#2E7D32';
+        sessionStorage.setItem('plano_escolhido', plano);
+        setTimeout(() => window.location.href = '/index.html', 1200);
+      } else {
+        feedback.textContent = 'Código inválido. Verifique e tente novamente.';
+        feedback.style.color = '#C0392B';
+      }
+    });
+
+    document.getElementById('input-cupom').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') document.getElementById('btn-cupom').click();
+    });
+  </script>
+</body>
+</html>
