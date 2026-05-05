@@ -1,4 +1,4 @@
-import { numeroDestino, numeroAlma, numeroPersonalidade, licaoVida, anoPessoal, numerosAusentes, numerosExcesso } from './engine.js';
+import { numeroDestino, numeroAlma, numeroPersonalidade, licaoVida, anoPessoal, anoAtualParaExibir, numerosAusentes, numerosExcesso } from './engine.js';
 import { ARCANOS, INTERPRETACOES, PALAVRAS_CHAVE, INTROS } from './interpretacoes.js';
 
 const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
@@ -32,13 +32,12 @@ export function renderizarRelatorio() {
   if (!dados) { window.location.href = '/'; return null; }
 
   const { nome, dia, mes, ano } = dados;
-  const anoAtual = new Date().getFullYear();
-
   const destino       = numeroDestino(nome);
   const alma          = numeroAlma(nome);
   const personalidade = numeroPersonalidade(nome);
   const licao         = licaoVida(dia, mes, ano);
-  const anoPess       = anoPessoal(dia, mes, anoAtual);
+  const anoPess       = anoPessoal(dia, mes);
+  const anoAtual      = anoAtualParaExibir(dia, mes);
   const ausentes      = numerosAusentes(nome, dia, mes, ano);
   const excesso       = numerosExcesso(nome);
   const dataFmt       = formatarData(dia, mes, ano);

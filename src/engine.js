@@ -53,8 +53,19 @@ export function licaoVida(dia, mes, ano) {
   return reduzir(reduzir(dia) + reduzir(mes) + somaAno);
 }
 
-export function anoPessoal(dia, mes, anoAtual) {
-  return reduzir(reduzir(dia) + reduzir(mes) + reduzir(Number(String(anoAtual).split('').reduce((a, d) => a + Number(d), 0))));
+export function anoPessoal(dia, mes) {
+  const hoje = new Date();
+  const anoRef = (hoje.getMonth() + 1 > mes || (hoje.getMonth() + 1 === mes && hoje.getDate() >= dia))
+    ? hoje.getFullYear()
+    : hoje.getFullYear() - 1;
+  return reduzir(reduzir(dia) + reduzir(mes) + reduzir(Number(String(anoRef).split('').reduce((a, d) => a + Number(d), 0))));
+}
+
+export function anoAtualParaExibir(dia, mes) {
+  const hoje = new Date();
+  return (hoje.getMonth() + 1 > mes || (hoje.getMonth() + 1 === mes && hoje.getDate() >= dia))
+    ? hoje.getFullYear()
+    : hoje.getFullYear() - 1;
 }
 
 // Retorna quais números (1-9) NÃO aparecem no nome+data
