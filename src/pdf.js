@@ -29,16 +29,16 @@ export function gerarPDF(nome) {
         windowWidth: 900,
         scrollX: 0,
         scrollY: 0,
-        onclone: (_doc, el) => {
-          // Activa capa de capa
-          const capa = el.querySelector('.pdf-capa');
+        onclone: (clonedDoc) => {
+          // Activa capa
+          const capa = clonedDoc.querySelector('.pdf-capa');
           if (capa) {
             capa.style.display = 'flex';
             capa.style.background = '#2A1060';
           }
 
           // Corrige gradient text (não suportado pelo html2canvas)
-          el.querySelectorAll('.destino-numero-grande, .card-numero').forEach(n => {
+          clonedDoc.querySelectorAll('.destino-numero-grande, .card-numero').forEach(n => {
             n.style.backgroundImage      = 'none';
             n.style.webkitBackgroundClip = 'unset';
             n.style.backgroundClip       = 'unset';
@@ -47,7 +47,7 @@ export function gerarPDF(nome) {
           });
 
           // Faixa lateral dos cards → cor sólida
-          el.querySelectorAll('.card-faixa').forEach(f => {
+          clonedDoc.querySelectorAll('.card-faixa').forEach(f => {
             f.style.background = '#C4607A';
           });
         },
