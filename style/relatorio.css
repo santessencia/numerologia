@@ -1,0 +1,352 @@
+/* ══════════════════════════════════════════
+   CAPA DO PDF (oculta na web, visível no PDF)
+══════════════════════════════════════════ */
+.pdf-capa {
+  display: none; /* ativada via classe .gerando-pdf */
+  min-height: 297mm;
+  width: 100%;
+  background: linear-gradient(160deg, #2A1060 0%, #4B2090 45%, #7A3A8A 100%);
+  color: var(--branco);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 60px 50px;
+  page-break-after: always;
+}
+
+.pdf-capa-marca {
+  font-size: 0.7rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(232, 137, 154, 0.85);
+  margin-bottom: 64px;
+}
+
+.pdf-capa-titulo {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.pdf-capa-subtitulo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 56px;
+}
+
+.pdf-capa-nome {
+  font-family: var(--serif);
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.pdf-capa-data {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+}
+
+.pdf-capa-gem {
+  margin-top: 64px;
+  font-size: 1.4rem;
+  color: var(--rosa-claro);
+  letter-spacing: 0.8em;
+  opacity: 0.7;
+}
+
+/* ══════════════════════════════════════════
+   CABEÇALHO DO RELATÓRIO
+══════════════════════════════════════════ */
+.rel-header {
+  text-align: center;
+  padding: 72px 0 52px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.rel-marca {
+  display: block;
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin-bottom: 32px;
+}
+
+.rel-nome {
+  font-family: var(--serif);
+  font-size: 3.25rem;
+  font-weight: 400;
+  color: var(--roxo-escuro);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.rel-data-nasc {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.06em;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO DESTINO — número central em destaque
+══════════════════════════════════════════ */
+.destino-secao {
+  text-align: center;
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--borda);
+  position: relative;
+  page-break-inside: avoid;
+}
+
+.destino-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin-bottom: 20px;
+}
+
+/* Halo atrás do número */
+.destino-halo {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.destino-halo::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(196, 96, 122, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.destino-numero-grande {
+  font-family: var(--serif);
+  font-size: 10rem;
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  background: linear-gradient(160deg, var(--roxo-escuro) 0%, var(--roxo-medio) 60%, var(--rosa) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.destino-arcano {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--roxo-medio);
+  margin: 20px 0 40px;
+}
+
+.destino-texto p {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.95;
+  color: var(--texto);
+  margin-bottom: 22px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.destino-texto p:last-child { margin-bottom: 0; }
+
+/* ══════════════════════════════════════════
+   CARDS SECUNDÁRIOS
+══════════════════════════════════════════ */
+.cards-titulo {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--roxo-escuro);
+  text-align: center;
+  padding: 60px 0 40px;
+  letter-spacing: 0.02em;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 64px;
+}
+
+.card {
+  background: var(--branco);
+  border: 1px solid var(--borda-card);
+  border-radius: 6px;
+  padding: 40px 48px 40px 52px;
+  box-shadow:
+    0 2px 12px rgba(75, 32, 144, 0.05),
+    0 1px 3px rgba(75, 32, 144, 0.03);
+  page-break-inside: avoid;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faixa lateral — div real (html2canvas não renderiza ::before com gradient) */
+.card-faixa {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--rosa), var(--roxo-medio));
+  border-radius: 6px 0 0 6px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.card-titulo {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  padding-top: 6px;
+}
+
+.card-numero {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 0.88;
+  background: linear-gradient(150deg, var(--roxo-escuro), var(--roxo-medio));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-arcano {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--roxo-medio);
+  margin-bottom: 24px;
+}
+
+.card-texto p {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--texto);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.card-texto p:last-child { margin-bottom: 0; }
+
+/* ══════════════════════════════════════════
+   BOTÃO PDF
+══════════════════════════════════════════ */
+.btn-pdf-wrapper {
+  text-align: center;
+  padding: 48px 0 88px;
+}
+
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 40px;
+  background: transparent;
+  color: var(--roxo);
+  border: 1.5px solid var(--roxo);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-pdf:hover {
+  background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-medio) 100%);
+  color: var(--branco);
+  border-color: transparent;
+}
+
+.btn-pdf:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 48px;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-voltar:hover { color: var(--roxo); }
+
+/* ══════════════════════════════════════════
+   RODAPÉ DO RELATÓRIO
+══════════════════════════════════════════ */
+.rel-footer {
+  border-top: 1px solid var(--borda);
+  padding: 36px 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.1em;
+}
+
+.rel-footer-marca {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  color: var(--rosa);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ══════════════════════════════════════════
+   PRINT / PDF
+══════════════════════════════════════════ */
+@media print {
+  .btn-pdf-wrapper,
+  .btn-voltar { display: none !important; }
+}
+
+/* Quando gerando PDF, ativa capa */
+.gerando-pdf .pdf-capa { display: flex; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVO
+══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .rel-nome { font-size: 2.5rem; }
+  .destino-numero-grande { font-size: 7.5rem; }
+  .card { padding: 28px 24px; }
+  .destino-texto p { font-size: 1rem; }
+}

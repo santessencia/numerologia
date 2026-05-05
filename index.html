@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chave da Essência — Mapa Numerológico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/form.css" />
+</head>
+<body>
+  <main class="form-page">
+    <div class="form-logo">
+      <img src="/assets/logo.svg" alt="Chave da Essência" />
+    </div>
+    <p class="form-tagline">Numerologia Pitagórica · O mapa que a sua alma já conhece</p>
+
+    <div class="form-card">
+      <h1 class="form-titulo">Descubra a sua Chave</h1>
+      <p class="form-subtitulo">Insira o seu nome completo de nascimento e a sua data de nascimento para revelar o seu mapa numerológico</p>
+
+      <form id="form-numerologia" novalidate>
+        <div class="form-grupo">
+          <label class="form-label" for="nome">Nome completo de nascimento</label>
+          <input
+            class="form-input"
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Como consta na certidão de nascimento"
+            autocomplete="name"
+            required
+          />
+          <span class="form-hint">Use o nome completo, sem apelidos ou diminutivos</span>
+        </div>
+
+        <div class="form-grupo">
+          <label class="form-label" for="nascimento">Data de nascimento</label>
+          <input
+            class="form-input"
+            type="date"
+            id="nascimento"
+            name="nascimento"
+            required
+          />
+        </div>
+
+        <button class="form-submit" type="submit" id="btn-submit">
+          Revelar o meu Mapa
+        </button>
+      </form>
+
+      <div class="form-divisor">
+        <span>Numerologia Pitagórica</span>
+      </div>
+    </div>
+
+    <p class="form-rodape">
+      Chave da Essência · Numerologia Pitagórica<br/>
+      Os números revelam o que a alma já sabe
+    </p>
+  </main>
+
+  <script type="module">
+    const form = document.getElementById('form-numerologia');
+    const btnSubmit = document.getElementById('btn-submit');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const nascimento = document.getElementById('nascimento').value;
+
+      if (!nome || !nascimento) return;
+
+      btnSubmit.textContent = 'Calculando…';
+      btnSubmit.disabled = true;
+
+      const [ano, mes, dia] = nascimento.split('-').map(Number);
+      sessionStorage.setItem('numerologia_dados', JSON.stringify({ nome, dia, mes, ano }));
+      window.location.href = '/resultado.html';
+    });
+  </script>
+</body>
+</html>

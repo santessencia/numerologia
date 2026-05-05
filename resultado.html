@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chave da Essência — Mapa Numerológico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/relatorio.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div style="padding-top: 40px;">
+      <a class="btn-voltar" id="btn-voltar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Novo mapa
+      </a>
+    </div>
+
+    <div id="relatorio-wrapper">
+
+      <!-- CAPA DO PDF (oculta na web) -->
+      <div class="pdf-capa" id="pdf-capa">
+        <span class="pdf-capa-marca">Chave da Essência · Numerologia Pitagórica</span>
+        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+        <h1 class="pdf-capa-titulo">Mapa Numerológico</h1>
+        <p class="pdf-capa-subtitulo">Uma leitura profunda da sua essência</p>
+        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+        <p class="pdf-capa-nome" id="capa-nome"></p>
+        <p class="pdf-capa-data" id="capa-data"></p>
+        <p class="pdf-capa-gem">✦ &nbsp; ✦ &nbsp; ✦</p>
+      </div>
+
+      <!-- Cabeçalho do relatório -->
+      <header class="rel-header">
+        <span class="rel-marca">✦ &nbsp; Chave da Essência &nbsp; ✦</span>
+        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+        <h1 class="rel-nome" id="rel-nome"></h1>
+        <p class="rel-data-nasc" id="rel-data"></p>
+      </header>
+
+      <!-- Número do Destino -->
+      <section class="destino-secao">
+        <span class="destino-label">Número do Destino</span>
+        <div class="destino-halo">
+          <div class="destino-numero-grande" id="destino-numero"></div>
+        </div>
+        <div class="destino-arcano" id="destino-arcano"></div>
+        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+        <div class="destino-texto container" id="destino-texto"></div>
+      </section>
+
+      <!-- Cards secundários -->
+      <h2 class="cards-titulo">Os outros números do seu mapa</h2>
+      <div class="cards-container" id="cards-container"></div>
+
+      <!-- Rodapé do relatório -->
+      <footer class="rel-footer">
+        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+        <span class="rel-footer-marca">Chave da Essência</span>
+        <p>Numerologia Pitagórica · Os números revelam o que a alma já sabe</p>
+      </footer>
+
+    </div><!-- fim #relatorio-wrapper -->
+
+    <!-- Botão PDF fora do wrapper para não entrar no PDF -->
+    <div class="btn-pdf-wrapper">
+      <button class="btn-pdf" id="btn-pdf">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Baixar Mapa em PDF
+      </button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { renderizarRelatorio } from '/src/relatorio.js';
+    import { gerarPDF } from '/src/pdf.js';
+
+    const dados = renderizarRelatorio();
+
+    document.getElementById('btn-voltar').addEventListener('click', () => {
+      window.location.href = '/';
+    });
+
+    document.getElementById('btn-pdf').addEventListener('click', () => {
+      const d = JSON.parse(sessionStorage.getItem('numerologia_dados'));
+      gerarPDF(d.nome);
+    });
+  </script>
+</body>
+</html>
