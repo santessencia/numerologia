@@ -32,37 +32,50 @@ export function limparNome(nome) {
 
 export function numeroDestino(nome) {
   const limpo = limparNome(nome);
-  const soma = limpo
-    .replace(/\s/g, '')
-    .split('')
-    .reduce((acc, l) => acc + valorLetra(l), 0);
+  const soma = limpo.replace(/\s/g, '').split('').reduce((acc, l) => acc + valorLetra(l), 0);
   return reduzir(soma);
 }
 
 export function numeroAlma(nome) {
   const limpo = limparNome(nome);
-  const soma = limpo
-    .replace(/\s/g, '')
-    .split('')
-    .filter(l => ehVogal(l))
-    .reduce((acc, l) => acc + valorLetra(l), 0);
+  const soma = limpo.replace(/\s/g, '').split('').filter(l => ehVogal(l)).reduce((acc, l) => acc + valorLetra(l), 0);
   return reduzir(soma);
 }
 
 export function numeroPersonalidade(nome) {
   const limpo = limparNome(nome);
-  const soma = limpo
-    .replace(/\s/g, '')
-    .split('')
-    .filter(l => !ehVogal(l) && l.match(/[A-Z]/))
-    .reduce((acc, l) => acc + valorLetra(l), 0);
+  const soma = limpo.replace(/\s/g, '').split('').filter(l => !ehVogal(l) && l.match(/[A-Z]/)).reduce((acc, l) => acc + valorLetra(l), 0);
   return reduzir(soma);
 }
 
 export function licaoVida(dia, mes, ano) {
-  const soma =
-    reduzir(dia) +
-    reduzir(mes) +
-    reduzir(Number(String(ano).split('').reduce((a, d) => a + Number(d), 0)));
-  return reduzir(soma);
+  const somaAno = reduzir(Number(String(ano).split('').reduce((a, d) => a + Number(d), 0)));
+  return reduzir(reduzir(dia) + reduzir(mes) + somaAno);
+}
+
+export function anoPessoal(dia, mes, anoAtual) {
+  return reduzir(reduzir(dia) + reduzir(mes) + reduzir(Number(String(anoAtual).split('').reduce((a, d) => a + Number(d), 0))));
+}
+
+// Retorna quais números (1-9) NÃO aparecem no nome+data
+export function numerosAusentes(nome, dia, mes, ano) {
+  const limpo = limparNome(nome);
+  const letras = limpo.replace(/\s/g, '').split('');
+  const dataDigitos = `${dia}${mes}${ano}`.split('').map(Number).filter(n => n >= 1 && n <= 9);
+  const presentes = new Set([
+    ...letras.map(l => valorLetra(l)),
+    ...dataDigitos
+  ]);
+  return [1,2,3,4,5,6,7,8,9].filter(n => !presentes.has(n));
+}
+
+// Retorna quais números (1-9) aparecem mais de 3 vezes no nome
+export function numerosExcesso(nome) {
+  const limpo = limparNome(nome);
+  const contagem = {};
+  limpo.replace(/\s/g, '').split('').forEach(l => {
+    const v = valorLetra(l);
+    if (v >= 1 && v <= 9) contagem[v] = (contagem[v] || 0) + 1;
+  });
+  return Object.entries(contagem).filter(([, c]) => c >= 3).map(([n]) => Number(n)).sort((a,b) => a-b);
 }

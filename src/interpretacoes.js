@@ -1,312 +1,426 @@
 export const ARCANOS = {
-  1: 'O Pioneiro',
-  2: 'O Diplomata',
-  3: 'O Criador',
-  4: 'O Construtor',
-  5: 'O Explorador',
-  6: 'O Guardião',
-  7: 'O Sábio',
-  8: 'O Realizador',
-  9: 'O Humanista',
-  11: 'O Iluminado',
-  22: 'O Mestre Construtor',
-  33: 'O Mestre do Amor',
+  1: 'O Pioneiro', 2: 'O Diplomata', 3: 'O Criador', 4: 'O Construtor',
+  5: 'O Explorador', 6: 'O Guardião', 7: 'O Sábio', 8: 'O Realizador',
+  9: 'O Humanista', 11: 'O Iluminado', 22: 'O Mestre Construtor', 33: 'O Mestre do Amor',
 };
 
+// ── PALAVRAS-CHAVE por número e secção ──────────────────────────────────────
+export const PALAVRAS_CHAVE = {
+  destino: {
+    1: 'Abertura, Liderança e Iniciativa', 2: 'Diplomacia e Pacifismo', 3: 'Comunicação e Criatividade',
+    4: 'Construção e Disciplina', 5: 'Versatilidade e Liberdade', 6: 'Responsabilidade e Amor',
+    7: 'Análise e Espiritualidade', 8: 'Tenacidade e Poder', 9: 'Fraternidade e Compaixão',
+    11: 'Inspiração e Intuição', 22: 'Filantropia e Grandes Realizações', 33: 'Justiça Social e Amor Universal',
+  },
+  alma: {
+    1: 'Iniciativa, Força e Independência', 2: 'Diplomacia, Paz e Cooperação', 3: 'Alegria, Criatividade e Comunicação',
+    4: 'Organização, Trabalho e Eficiência', 5: 'Carisma, Força e Impulsividade', 6: 'Amor, Responsabilidade e Harmonia',
+    7: 'Sabedoria, Justiça e Introspecção', 8: 'Ambição, Poder e Realização', 9: 'Generosidade e Espírito Comunitário',
+    11: 'Espiritualidade, Sabedoria e Idealismo', 22: 'Consciência Superior e Liderança', 33: 'Amor Universal e Serviço',
+  },
+  personalidade: {
+    1: 'Liderança, Independência e Autoconfiança', 2: 'Prestatividade, Diplomacia e Sutileza', 3: 'Alegria, Afeto e Otimismo',
+    4: 'Solidez, Eficiência e Confiabilidade', 5: 'Carisma, Força e Impulsividade', 6: 'Afetuosidade, Serenidade e Proteção',
+    7: 'Profundidade Intelectual e Intuição', 8: 'Vitalidade, Ambição e Sucesso', 9: 'Compaixão, Talento e Generosidade',
+    11: 'Paz, Harmonia e Liderança Espiritual', 22: 'Paciência, Perseverança e Diplomacia', 33: 'Humildade, Generosidade e Amor Fraternal',
+  },
+  licao: {
+    1: 'Individualidade, Liderança e Autoconfiança', 2: 'Cooperação, Diplomacia e Harmonia', 3: 'Comunicação, Criatividade e Alegria',
+    4: 'Organização, Disciplina e Responsabilidade', 5: 'Liberdade, Versatilidade e Responsabilidade', 6: 'Responsabilidade, Família e Comunidade',
+    7: 'Autoconhecimento, Intuição e Espiritualidade', 8: 'Equilíbrio Material, Poder e Determinação', 9: 'Compaixão, Doação e Serviço',
+    11: 'Espiritualidade, Idealismo e Intuição', 22: 'Transformar Sonhos em Grandes Obras', 33: 'Amor Incondicional e Serviço à Humanidade',
+  },
+};
+
+// ── TEXTOS INTERPRETATIVOS (fonte: banco de textos autoral) ─────────────────
 const destino = {
-  1: `Você nasceu para liderar. Seu destino é trilhar caminhos que ainda não existem, abrir portas com coragem e mostrar ao mundo que é possível ser original sem pedir permissão. A independência não é apenas um traço de personalidade — é a sua missão.
+  1: `Quem tem o número do destino 1 tem como palavra-chave "liderança". Você deve aproveitar as oportunidades que a vida oferece para desenvolver seu potencial interior. Marcado por uma grande autoconfiança e capacidade de tomar iniciativa, você deverá pôr em prática sua capacidade empreendedora, liderando projetos originais e exclusivos.
 
-Ao longo da vida, você será colocado repetidamente em posições onde precisará agir sozinho, tomar decisões difíceis e confiar em sua própria bússola interior. Cada desafio é um convite para fortalecer a confiança em si mesmo.
+Seus talentos permitirão que você tenha seu próprio negócio, ou que atue em atividades em que pelo menos exerça a liderança, planejando e dirigindo suas ações. Você terá êxito se aproveitar as oportunidades que surgirem no campo da pesquisa científica, no comando político, como designer ou ocupando posições de direção.
 
-O risco do seu caminho está na tendência ao isolamento ou à arrogância quando a insegurança se disfarça de autossuficiência. Seu maior crescimento virá quando aprender a liderar com generosidade, incluindo as pessoas sem abrir mão da sua essência.`,
+Em suma, tudo em que haja pioneirismo e visão focada no futuro pode ser valorizado. No entanto, deve evitar o autoritarismo e o orgulho. É importante que tome a iniciativa, mas nunca esqueça que não fazemos nada sozinhos, mas sim em parceria com os outros.`,
 
-  2: `Sua alma veio ao mundo com o dom da mediação. Você sente o que os outros sentem antes mesmo que eles mesmos percebam, e isso te torna um instrumento de paz em ambientes de conflito. O seu destino está ligado à construção de pontes — entre pessoas, ideias e mundos aparentemente opostos.
+  2: `Quem tem o número do destino 2 tem como palavras-chave "diplomacia e pacifismo". Você deve seguir pela vida com a missão de ajudar o próximo e semear a paz, tanto na família quanto no trabalho ou na sociedade. Você age com a emoção e a intuição, é sentimental e romântico e gosta de fazer parcerias, valorizando a relação no casamento.
 
-A parceria é o seu território natural. Você floresce em relacionamentos profundos, colaborações criativas e espaços onde a sutileza é valorizada. Sua força não está no volume da voz, mas na qualidade da escuta.
+Deverá pôr em prática sua capacidade diplomática, aproveitando o seu talento para lidar com diferentes problemas e encontrar soluções para situações difíceis que surgirem pela vida. Saberá esperar para agir no momento certo. Pode usar sua capacidade ímpar de observar e analisar os detalhes.
 
-O desafio do caminho 2 é a codependência e o medo de se posicionar. Quando você aprender que dizer não também é um ato de amor, sua capacidade de servir ao outro se multiplicará.`,
+Terá êxito se aproveitar as oportunidades que surgirem no campo das relações públicas, como professor, ou em trabalhos que envolvam muita negociação. Deve evitar o pessimismo, a dependência excessiva de outras pessoas e o melindre por fatos insignificantes.`,
 
-  3: `Você veio para expressar. Sua vida é uma obra de arte em construção, e o seu papel no mundo é trazer leveza, criatividade e alegria para os espaços que habita. O número 3 vibra com a comunicação em todas as suas formas — escrita, fala, arte, música, humor.
+  3: `Quem tem o número do destino 3 tem como palavra-chave "comunicação". Deve seguir os caminhos da vida desenvolvendo sua imaginação fértil, sua excepcional capacidade de comunicação e inegáveis habilidades artísticas. Rindo, brincando, usando o senso de humor, com uma incomparável capacidade de fazer relacionamentos, você deve aproveitar seu espírito alegre e otimista para motivar a todos.
 
-Onde quer que você vá, você inspira. Pessoas se sentem mais vivas em sua presença, e isso não é coincidência — é o efeito da sua energia 3 funcionando em pleno potencial. O universo te deu o dom de transformar o ordinário em extraordinário.
+Você atrai pessoas tanto para a amizade quanto para o amor. Falante e líder natural, conquista facilmente popularidade. Gosta de aproveitar a vida, apreciando boa comida, música em geral e roupas bonitas. Terá êxito se aproveitar as oportunidades que surgirem no campo do entretenimento, na área financeira, em profissões que envolvam comunicação ou criatividade.
 
-Seu maior desafio é a dispersão. Com tantos talentos e interesses, a tentação de começar sem terminar é constante. Quando você escolher aprofundar ao invés de apenas espalhar, sua criatividade se tornará uma força transformadora de verdade.`,
+Não desperdice sua energia em várias direções. Procure não se meter em assuntos alheios. Evite fofoca e nunca manipule as pessoas.`,
 
-  4: `Sua missão é construir. O destino 4 chama você a criar estruturas sólidas — na carreira, na família, nos projetos que abraça. Você não tem medo do trabalho duro; na verdade, é nele que você encontra significado e dignidade.
+  4: `Quem tem o número do destino 4 tem como palavra-chave "construção". Deve seguir pela vida desenvolvendo a autodisciplina e a eficiência, a fim de chegar a resultados concretos em atividades que tenham importância. A honestidade e a responsabilidade fazem parte do seu caráter. É conservador e gosta de viver de acordo com as regras e a tradição.
 
-A confiabilidade é um dos seus maiores presentes. Quando você assume um compromisso, as pessoas sabem que podem contar com você. Esse tipo de integridade é raro e valioso, e o mundo precisa de mais pessoas como você para funcionar.
+Você deverá aproveitar o seu potencial planejando suas ações de forma sistemática. O 4 é o número da terra — você tem uma ligação muito forte com administração pública, mecânica, construção, física e matemática. Gosta de planejar, ficando mais à vontade para trabalhar em atividades concretas como as de engenheiro, médico, escritor e em posições de gerência.
 
-O perigo do caminho 4 é a rigidez. Quando as regras se tornam mais importantes do que as pessoas, você perde o fio de ouro que conecta o trabalho ao propósito. Flexibilidade não é fraqueza — é a sabedoria que transforma estrutura em legado.`,
+Deve agir de forma realista e prática. Tome cuidado ao julgar os outros, pois você tem forte propensão a separar tudo entre certo e errado. Evite a obsessão pela rotina e aceite as mudanças com mais tranquilidade.`,
 
-  5: `Liberdade é a sua palavra sagrada. Você veio ao mundo para experimentar, questionar, viajar — literal e metaforicamente. O destino 5 é marcado por transformações, mudanças de rota e encontros que expandem a consciência.
+  5: `Quem tem o número do destino 5 tem como palavra-chave "versatilidade". Deve seguir pela vida usando a sua agilidade mental e a sua capacidade de resolver rapidamente os problemas, podendo adaptar-se às constantes mudanças. Você deverá pôr em prática seu potencial agindo com maleabilidade e versatilidade.
 
-Você tem um magnetismo natural que atrai pessoas e oportunidades diferentes. Sua curiosidade é insaciável, e é exatamente essa característica que te permite ver o que os outros não veem, conectar pontos que parecem desconexos e encontrar soluções criativas onde outros veem obstáculos.
+Como você tem um pensamento livre, acaba não se apegando a bens materiais. Você possui energia latente, é impaciente e está sempre procurando mudanças e novas aventuras, expondo-se às mais diferentes experiências. Terá êxito se aproveitar as oportunidades que envolvam contato com o público, pois é fluente na comunicação oral.
 
-O desafio do 5 é o excesso. Quando a busca por experiências se torna fuga de responsabilidade, o potencial se dissipa. Sua evolução está em aprender que a verdadeira liberdade não é ausência de compromisso — é escolher conscientemente onde ancorar sua energia.`,
+Deve controlar sua dificuldade em conviver com regras e normas, pois corre o risco de não terminar as atividades e os negócios que iniciou. Você precisa de liberdade, mas acima de tudo deve estar consciente de que o mais difícil é conviver com ela.`,
 
-  6: `Você nasceu para cuidar. O destino 6 é o número do amor incondicional, da família, da responsabilidade afetiva. Você tem uma capacidade natural de perceber o que os outros precisam e agir para que se sintam amados e seguros.
+  6: `Quem tem o número do destino 6 tem como palavra-chave "responsabilidade". Deve seguir os caminhos da vida desenvolvendo o equilíbrio, a responsabilidade e o amor, sendo uma pessoa prestativa tanto dentro da família como na comunidade e no ambiente de trabalho. Agindo assim, sentirá uma grande alegria de viver.
 
-Sua presença tem um efeito estabilizador nas pessoas e nos ambientes. Onde há conflito, você traz harmonia; onde há desespero, você traz esperança. Essa capacidade de criar lar — não apenas físico, mas emocional — é um dom extraordinário.
+Você deverá pôr em prática seu potencial agindo com justiça, orientando aqueles que o procuram. Ama a beleza, gosta das artes e aprecia uma casa bem arrumada. Normalmente, as pessoas que têm esse número procuram uma atividade que vise o benefício dos outros.
 
-O risco do caminho 6 é o martírio silencioso. Quando você cuida de todos mas esquece de si mesmo, a exaustão inevitavelmente chega. Aprender a receber com a mesma graça com que você dá é a sua maior lição espiritual.`,
+Terá êxito se aproveitar as oportunidades que surgirem trabalhando como decorador, professor, enfermeiro, psicólogo, consultor, ou responsável por projetos comunitários. Cuidado, pois pode tornar-se superprotetor, ou então exigente demais, eternamente insatisfeito com os resultados alcançados.`,
 
-  7: `Sua jornada é interior. O destino 7 é o do estudioso, do investigador da alma, do ser que não se satisfaz com respostas superficiais. Você precisa entender o porquê das coisas — não apenas como funcionam, mas qual o significado por trás delas.
+  7: `Quem tem o número do destino 7 tem como palavra-chave "análise". Deve seguir pela vida desenvolvendo a sabedoria, a intuição e a espiritualidade. Você deverá pôr em prática seu potencial questionando, analisando, refletindo, buscando respostas sobre o significado da vida no seu próprio Eu Interior.
 
-Você é naturalmente introspectivo e pode parecer distante para quem não te conhece bem. Mas por dentro, sua mente nunca para: você está sempre processando, analisando, conectando padrões que a maioria simplesmente não percebe. Esse é o seu superpoder silencioso.
+É uma pessoa intelectualmente curiosa que valoriza a educação e o conhecimento. Sua missão na vida é procurar compreender, e assim obter seu desenvolvimento. É atraído por lugares tranquilos junto à água e à natureza. Sua frequente propensão à introspecção pode acabar afastando-o do convívio social.
 
-O desafio do 7 é o isolamento como mecanismo de defesa. Quando o mundo parece barulhento demais, a solidão se torna um refúgio que pode virar uma prisão. Sua evolução está em compartilhar o que você descobriu — o mundo precisa da sua sabedoria.`,
+Terá êxito se aproveitar as oportunidades que surgirem trabalhando em pesquisa e análise científica, composição de músicas, química, literatura ou ciências ocultas. Precisa tomar cuidado com as manifestações negativas de seu número, que são orgulho e arrogância.`,
 
-  8: `Você veio para manifestar. O destino 8 é o número do poder, da abundância e da autoridade conquistada pelo esforço. Você tem uma visão natural para o que pode ser construído, otimizado e multiplicado — em negócios, na liderança e na vida material.
+  8: `Quem tem o número do destino 8 tem como palavra-chave "tenacidade". Deve seguir os caminhos da vida desenvolvendo a autoconfiança, a ambição de poder e a habilidade de lidar com dinheiro de forma responsável, podendo chegar a uma posição de destaque na área financeira.
 
-Sua relação com o dinheiro e o poder é um dos seus maiores campos de aprendizado. Quando você usa esses recursos a serviço de algo maior do que você mesmo, o 8 funciona em sua vibração mais alta — gerando prosperidade real e duradoura.
+Você deverá pôr em prática seu potencial agindo com eficiência e determinação, a fim de resolver problemas e desenvolver métodos para aumentar a eficiência. É importante que aprenda a trabalhar em grupo. Busque a independência financeira desde cedo, procurando abrir as portas para a riqueza material.
 
-O risco do caminho 8 está na inversão: quando o poder se torna um fim em si mesmo, você perde a bússola. Controle, workaholism e obsessão por status são os desvios do 8. Sua grandeza real vem quando o sucesso externo reflete uma riqueza interior igualmente desenvolvida.`,
+Terá êxito se aproveitar as oportunidades que surgirem trabalhando na administração de empresas, em bancos, na área financeira, em empresas públicas e hospitalares. Nunca se deixe atrair de maneira obsessiva pelo prazer que o dinheiro pode proporcionar, pois corre o risco de se tornar materialista.`,
 
-  9: `Sua missão é servir à humanidade. O destino 9 carrega a energia da compaixão universal, da sabedoria acumulada e do desejo genuíno de deixar o mundo melhor do que encontrou. Você não consegue ficar indiferente ao sofrimento alheio — isso não é fraqueza, é sua vocação.
+  9: `Quem tem o número do destino 9 tem como palavra-chave "fraternidade". A sua missão estará focada na transmissão de sabedoria. Você deverá pôr em prática o seu potencial desenvolvendo a compaixão e a fraternidade, despojando-se de qualquer tipo de preconceito. Sua prioridade é resolver os problemas dos outros, dispensando qualquer tipo de retribuição.
 
-Você tem uma visão panorâmica da vida que muitos levam anos para desenvolver. Enxerga padrões, compreende motivações humanas com profundidade e tem a capacidade de transformar experiências dolorosas em sabedoria que pode ajudar outros.
+Você atrai pessoas e consegue influenciá-las. Terá êxito se aproveitar as oportunidades que surgirem trabalhando em organizações de proteção ao meio ambiente, ou como professor, líder religioso, veterinário; enfim, você possui muitos talentos nas mais diversas áreas.
 
-O desafio do 9 é o apego a resultados. Quando você espera que o mundo reconheça o quanto você dá, a decepção é inevitável. Sua evolução está em servir com leveza, sem expectativa de retorno — e paradoxalmente, é exatamente aí que tudo começa a retornar.`,
+Caso vivencie os aspectos negativos deste número, poderá tornar-se possessivo e exageradamente ansioso. Deve tomar cuidado para não sucumbir às tentações que a fama traz, sob pena de jamais concretizar seus mais nobres objetivos.`,
 
-  11: `Você é um canal. O 11 é o primeiro número mestre, vibra com intuição altíssima, sensibilidade espiritual e o potencial de iluminar multidões. Você veio ao mundo com um fio direto ao invisível — sonhos vívidos, percepções que vão além da lógica, sensações que se provam certas.
+  11: `Quem tem o número do destino 11 tem como palavra-chave "inspiração". No seu caminho há um enorme potencial para transformar a vida de outras pessoas e proporcionar condições melhores de vida para quem precisa. Você trabalha para aperfeiçoar e reformar. Deve permitir que a intuição e a criatividade orientem o seu trabalho.
 
-Carregar o destino 11 não é fácil. A intensidade da sua percepção pode ser esmagadora, e o mundo pode parecer barulhento, cruel ou incompreensível para alguém que sente tudo tão fundo. Mas essa mesma sensibilidade é o veículo da sua missão.
+O seu caminho é cheio de obstáculos e carregado de turbulência, mas esse caminho difícil pode trazer-lhe o reconhecimento do seu trabalho através da fama e do sucesso. Terá êxito se aproveitar as oportunidades que surgirem trabalhando como psicólogo, poeta, artista e em qualquer profissão que exija um grande potencial criativo.
 
-Quando você aprende a confiar na sua intuição sem tentar explicá-la racionalmente, e quando encontra formas de traduzir o que percebe em mensagens que o mundo pode receber, você se torna uma força de transformação genuína. Sua vida é um ensinamento vivo.`,
+Se você não conseguir realizar o seu trabalho à altura do ideal do Número Mestre Onze, então com certeza viverá como um 2. Caso vivencie os aspectos negativos desse número, será uma pessoa tensa, com tendência à depressão, extremamente crítica e sonhadora.`,
 
-  22: `Você é um arquiteto do impossível. O 22 é o número mestre da manifestação em grande escala — você não veio para construir apenas para si mesmo, mas para criar estruturas que beneficiem muitas pessoas por muito tempo. Seus sonhos têm dimensões coletivas.
+  22: `Quem tem o número do destino 22 tem como palavra-chave "filantropia". Seu caminho é criar e construir grandes projetos usando os princípios espirituais mais elevados. As grandes realizações são seu desafio, e você as aborda utilizando métodos não convencionais. O seu objetivo é trabalhar para o bem de todos, fazendo obras que contribuam para o progresso da humanidade.
 
-A tensão do 22 é entre o 4 (o construtor prático) e o 11 (o visionário intuitivo). Você sente os dois dentro de você: o impulso de criar sistemas sólidos e a visão de algo que ainda não existe. Quando esses dois lados trabalham juntos, você é praticamente imparável.
+Vai encontrar muitos obstáculos em seu caminho, mas você tem a habilidade de ultrapassá-los. Terá êxito se aproveitar as oportunidades que surgirem trabalhando em administração de projetos para a comunidade, tais como hospitais, creches e asilos, bibliotecas públicas, engenharia ou transporte público.
 
-Seu maior risco é a paralisia diante da grandiosidade da sua própria visão. Quando o projeto parece grande demais, você pode se esconder na perfeição ou na procrastinação. A chave é começar — mesmo imperfeito, mesmo pequeno. O universo acelera quando você dá o primeiro passo.`,
+Caso não consiga viver à altura do ideal tão elevado do Número Mestre Vinte e Dois, então viverá com as características de quem tem o número do destino 4. Caso vivencie aspectos negativos desse número, se tornará uma pessoa que não aceita os erros dos outros nem a autoridade de terceiros.`,
 
-  33: `O 33 é o mais raro e mais exigente dos números mestres. Você veio carregando o potencial do amor incondicional em sua forma mais elevada — não o amor romântico ou familiar apenas, mas a compaixão que abraça a humanidade inteira sem julgamento.
+  33: `Quem tem o número do destino 33 tem como palavra-chave "justiça social". Seu caminho é dedicar seu amor a serviço dos outros. Sente-se responsável por estabelecer uma situação de paz e harmonia no mundo. Tem uma intuição aguda e percebe quais são as necessidades das pessoas. Você atrai os outros com seu jeito acolhedor, amigável e compreensivo.
 
-Sua presença tem um efeito de cura nos ambientes que você habita. Pessoas se sentem vistas, acolhidas e seguras quando estão com você. Isso não é exagero — é a vibração do 33 operando através da sua existência. Você é um instrumento de amor com pernas.
+Terá êxito se aproveitar as oportunidades que surgirem trabalhando na área do direito e em entidades internacionais voltadas para o bem comum, tais como a Cruz Vermelha. Poderá também ser um líder espiritual.
 
-O peso do 33 está na tentação de carregar os outros no lugar de caminhar ao lado. Quando você se martiriza em nome do amor, perde a leveza que é a sua maior ferramenta de transformação. Seu caminho é demonstrar que é possível amar profundamente sem se dissolver no outro.`,
+Caso você não consiga viver à altura do ideal tão elevado do Número Mestre Trinta e Três (que é muito difícil), então viverá como um 6, com as suas características.`,
 };
 
 const alma = {
-  1: `A sua alma deseja ser única. Por dentro, existe um fogo de independência que muitas vezes você contém por medo de parecer arrogante ou de magoar as pessoas. Mas essa necessidade de singularidade é sagrada — ela é o chamado da sua essência mais profunda.
+  1: `Quem tem o número da alma 1 traz um grande espírito de iniciativa e liderança desenvolvido ao longo de suas vidas passadas, onde vivenciou um grande destaque na sociedade, nos negócios ou até mesmo no esporte e na cultura. Você gosta de traçar seus caminhos e prefere agir sozinho, tendo dificuldade em aceitar a opinião dos outros.
 
-Você sonha com autonomia. Seja em que área for — trabalho, relacionamentos, projetos pessoais — sua alma se ressente quando precisa pedir permissão ou se enquadrar em moldes que não foram feitos para você. Essa resistência não é teimosia; é integridade.
+Você aprendeu a ser idealista, lutando obstinadamente pelas suas convicções. Não suporta imposições, preferindo estabelecer e seguir suas próprias regras. A determinação e a força de vontade fizeram de você um pioneiro que aprecia as novidades.
 
-Nutrir esse fogo interior com projetos próprios, escolhas corajosas e espaço para ser exatamente quem você é não é egoísmo — é cuidar da fonte de onde toda a sua contribuição para o mundo emana.`,
+Você deve aproveitar sua grande força interior, que o capacita para tomar iniciativas e liderar empreitadas. No entanto, esteja atento para não cair na tentação de achar que sabe tudo e não precisa da contribuição dos outros, podendo tornar-se egoísta, dominador e intransigente.`,
 
-  2: `Sua alma foi feita para conectar. O que você mais deseja, no nível mais profundo, é pertencer — ter ao seu lado pessoas que te entendem de verdade, com quem você pode baixar a guarda e simplesmente ser. A solidão pesa em você de uma forma que vai além do físico.
+  2: `Quem tem o número de alma 2, ao longo de suas vidas passadas, aprendeu a procurar uma solução para problemas, garantindo assim harmonia no lar, trabalho ou mesmo relacionamentos pessoais. Amante da paz, trabalhou muito bem em grupo, normalmente sob o comando de um líder. Sua alma lhe confere uma excepcional capacidade de discernimento, através do qual consegue separar o joio do trigo sem dificuldade.
 
-Você sente as emoções alheias como se fossem suas, e isso pode ser exaustivo quando não há limites claros. Mas também é essa mesma porosidade que faz de você uma das pessoas mais empáticas que existem — alguém capaz de oferecer uma qualidade de presença que a maioria das pessoas nunca experimentou.
+Sabe guardar segredos e dar conselhos como ninguém. Sua gentileza e amabilidade atraem particularmente aqueles que, nos momentos difíceis, procuram um ombro amigo.
 
-Sua alma pede que você invista em vínculos verdadeiros, não em muitos — em poucos e profundos. É nesse espaço de intimidade real que você se reabastece e encontra sentido.`,
+Você deve tirar proveito do seu potencial de companheirismo e diplomacia para obter sucesso em tudo aquilo que faz, evitando assim que a indecisão e a insegurança atrapalhem a concretização dos seus planos.`,
 
-  3: `Sua alma quer se expressar. Lá dentro, existe um universo de ideias, imagens, histórias e emoções esperando para ser compartilhado com o mundo. Quando você não encontra canais de expressão, algo murcha em você — uma espécie de sufocamento silencioso.
+  3: `Quem tem o número da alma 3, ao longo de suas vidas passadas, aprendeu a não se abater diante dos problemas e sempre procurou encontrar o lado bom da vida. A alegria, o otimismo e o espírito desarmado foram seus traços marcantes. Ser feliz e fazer os outros felizes: esse é o seu lema.
 
-Criatividade não é um hobby para você: é oxigênio. Seja pela escrita, pela fala, pela arte, pela moda, pela culinária ou por qualquer outra forma — sua alma precisa criar para se sentir viva e inteira. Quando isso flui, você irradia.
+Seu sorriso estampado no rosto e seu estilo espirituoso são envolventes. Desenvolveu um grande poder de comunicação e sua criatividade é aguçada. Nos momentos mais difíceis, consegue minimizar o sofrimento, confortando os mais entristecidos.
 
-O que sua alma mais teme é não ser ouvida, não deixar uma marca. Isso não é vaidade — é o reconhecimento instintivo de que você tem algo genuíno para oferecer. Confie nisso.`,
+Você deve capitalizar seu bom humor e otimismo com vistas a atingir seus objetivos, evitando a superficialidade, a mentira, o narcisismo e a propensão a fazer fofoca, defeitos que podem se manifestar a qualquer hora.`,
 
-  4: `Sua alma busca segurança. O que você mais deseja por dentro é estabilidade — saber que tem uma base sólida sob os pés, que as pessoas ao seu redor são confiáveis, que amanhã será parecido com hoje em termos de estrutura e previsibilidade.
+  4: `Quem tem o número da alma 4, ao longo de suas vidas passadas, acumulou grande espírito prático e gosto pelo trabalho bem feito. Exigente e perfeccionista, aprendeu a agir de forma organizada, sem precipitação. Aprendeu a trabalhar com eficiência, colhendo bons resultados, pois costuma lograr êxito, principalmente material, em tudo que faz.
 
-Isso não significa que você teme a mudança, mas que você precisa de uma fundação firme para se sentir livre para crescer. Como uma árvore que só pode se expandir quando tem raízes profundas, você floresce quando tem ordem, rotina e comprometimento na sua vida.
+Desde a decoração da sua casa até o desenvolvimento de um projeto, é cauteloso e não costuma se envolver em aventuras perigosas. Aprendeu a ser prudente, considerando primeiro os obstáculos a serem transpostos para depois avaliar os benefícios.
 
-Sua alma se satisfaz no trabalho bem feito, no lar organizado, nos compromissos honrados. Há uma dignidade profunda na forma como você aborda as responsabilidades — e isso é algo para celebrar, não minimizar.`,
+Assuma aquilo que verdadeiramente é: trabalhador eficiente e meticuloso. Não deve ficar preocupado com acusações e ciúmes, caso contrário poderá enveredar pelo caminho da improdutividade, negligência e medo.`,
 
-  5: `Sua alma anseia por liberdade. Lá dentro, existe um aventureiro que se sufoca quando preso em rotinas rígidas, relacionamentos sufocantes ou ambientes que não permitem movimento. Você precisa de ar — de espaço para explorar, experimentar e descobrir.
+  5: `Quem tem o número de alma 5 traz amor pela liberdade e é atraído por novas perspectivas. Aventuras não convencionais o seduzem. Você desenvolveu muitos talentos e possui diversos interesses. Sua mente é brilhante e sua curiosidade faz com que explore novas ideias sem preconceitos.
 
-A variedade não é capricho para você: é necessidade da alma. Novas experiências, novos lugares, novas ideias e novas perspectivas são o alimento que mantém sua chama acesa. Quando você se permite isso, você brilha de uma forma que é impossível ignorar.
+Deve tomar cuidado, caso esteja com dificuldade momentânea em expressar esse seu jeito de ser, para não sucumbir ao vício (jogos, drogas, alcoolismo etc.) e a atitudes irresponsáveis.`,
 
-Sua alma tem medo de estagnar, de desperdiçar a vida em uma versão menor de quem você poderia ser. Esse medo, quando transformado em combustível e não em ansiedade, é exatamente o que te mantém em movimento e em crescimento.`,
+  6: `Quem tem o número de alma 6 traz um espírito de enorme responsabilidade voltado para a harmonia familiar, desenvolvido ao longo de suas vidas passadas. Fiel no casamento, dedica-se com louvor ao bem-estar e à felicidade daqueles que o cercam. Tem uma sensibilidade muito grande e aguçada e é capaz de restabelecer a paz entre aqueles que estão à sua volta.
 
-  6: `Sua alma foi tecida com fios de amor. O que você mais deseja, no nível mais íntimo, é amar e ser amado de forma plena, incondicional e recíproca. Família, lar, pertencimento — essas palavras ressoam em você de uma forma que vai além do convencional.
+Cumpre seus deveres com maestria e não foge aos seus compromissos. Prefere trabalhar em grupo a trabalhar de forma individual.
 
-Você tem um instinto protetor poderoso. Quando as pessoas ao seu redor estão bem, você está bem. Quando há sofrimento à sua volta, é difícil para você descansar enquanto não faz algo a respeito. Esse cuidado genuíno é um dom — mas precisa de fronteiras para não se tornar fardo.
+Você deve aproveitar o dom que possui e construir assim um mundo mais harmonioso e justo. No entanto, tome cuidado para não se tornar possessivo.`,
 
-Sua alma se nutre de harmonia, de conexões afetivas saudáveis e de espaços onde o amor é expresso e recebido com naturalidade. Criar esse ambiente é ao mesmo tempo sua missão e sua recompensa.`,
+  7: `Quem tem o número de alma 7 traz sabedoria e justiça desenvolvidas ao longo de suas vidas passadas. Procurou sempre analisar os fatos com profundidade para chegar a uma conclusão que levasse a ações seguras. Não gosta de ficar em dúvida sobre as suas atitudes e consegue, através da busca da espiritualidade, uma forma de iluminar seus caminhos.
 
-  7: `Sua alma busca verdade. Lá dentro, existe um filósofo insaciável que não se contenta com explicações superficiais, narrativas prontas ou crenças herdadas sem questionamento. Você precisa entender — e não qualquer entender, mas um entendimento profundo, quase espiritual.
+A retidão na conduta é mais importante que o prazer. Prefere a companhia de quem goste de filosofar sobre a vida e muitas vezes gosta de ficar só. E aí, sozinho, encontra na introspecção a oportunidade de questionar e analisar tudo que o cerca.
 
-A solidão não te assusta; às vezes, é o único lugar onde você consegue ouvir seus próprios pensamentos. Você precisa de silêncio para processar o que experiencia, e ambientes caóticos ou barulhentos te drenam rapidamente. Isso não é antissocial — é a forma da sua alma se recarregar.
+Você aprendeu a entrar em sintonia consigo mesmo, desenvolvendo seus próprios recursos. Deve aproveitar a sua espiritualidade e o seu senso refinado de justiça para conquistar o seu espaço, mas não pode descuidar, pois tende a cair na melancolia.`,
 
-O que sua alma mais teme é a superficialidade — uma vida vivida na casca das coisas, sem profundidade, sem sentido, sem o mistério que torna a existência fascinante. Sua missão interior é encontrar e viver esse significado.`,
+  8: `Quem tem o número de alma 8, ao longo de suas vidas passadas, desenvolveu uma relação profunda com o poder, a liderança e a conquista material. Você aprendeu que a abundância é uma consequência natural do trabalho com integridade e da capacidade de gerir recursos com responsabilidade.
 
-  8: `Sua alma deseja conquistar. Por dentro, existe uma ambição legítima e poderosa — não de dominar os outros, mas de se tornar a melhor versão de si mesmo e de construir algo que tenha peso, valor e permanência no mundo.
+Tem um instinto aguçado para os negócios e uma determinação que inspira os que estão ao seu redor. A ambição, quando bem direcionada, é o seu maior combustível para crescimento pessoal e profissional.
 
-Você tem uma relação profunda com a ideia de realização. Metas cumpridas, projetos concluídos, reconhecimento pelo trabalho bem feito — esses não são apenas marcos externos, mas confirmações de que você está no caminho certo. Sua autoestima está intimamente ligada ao que você constrói.
+Deve aproveitar sua habilidade organizacional e sua visão estratégica, mas cuidado para não se perder no materialismo excessivo ou no desejo de controle. O verdadeiro poder do 8 está em servir não apenas a si mesmo, mas a construir algo que beneficie muitos.`,
 
-Sua alma teme a mediocridade e o desperdício de potencial. Esse medo, quando canalizado com equilíbrio, te impulsiona. Quando se torna obsessão, te aprisiona. O segredo é aprender que abundância não é apenas material — é também interna.`,
+  9: `Quem tem o número de alma 9 traz a generosidade e o espírito comunitário desenvolvidos ao longo de suas vidas passadas. Você aprendeu a se doar em favor da comunidade ou daqueles que mais estima. Abraçou uma causa humanitária, dando não só seu afeto, mas também o seu conhecimento e experiência.
 
-  9: `Sua alma é oceânica. Você sente o mundo de uma forma ampla, quase sem fronteiras, e carrega dentro de si uma compaixão que às vezes te surpreende. Histórias de sofrimento te tocam fundo; injustiças te perturbam de verdade; a beleza do mundo te comove até as lágrimas.
+É prestativo, colocando-se à disposição para ajudar e resolver qualquer problema. Amigo dedicado e bom amante, consegue manter relacionamentos sólidos por muito tempo.
 
-Você tem uma memória emocional rica e uma sabedoria que parece vir de muito além desta vida. Pessoas instintivamente te procuram para conselhos, para desabafar, para sentir que alguém realmente entende — e você geralmente entende, mesmo sem explicar como.
+Deve explorar sua capacidade em situações onde pode ser generoso e onde pode usar os seus talentos criativos. Controle suas emoções, caso contrário terá dificuldade de atingir seus objetivos.`,
 
-O que sua alma mais precisa é de permissão para deixar ir. Você acumula emoções, relacionamentos e situações que já cumpriram seu ciclo. Aprender a soltar — com amor e sem culpa — é o ato mais profundo de cuidado que você pode oferecer a si mesmo.`,
+  11: `Quem tem o número da alma 11, ao longo das suas vidas passadas, desenvolveu a sabedoria e a compreensão, com forte inclinação à espiritualidade. Aprendeu a ter coragem diante das situações inesperadas. Pode aplicar inúmeras vezes o seu conhecimento espiritual nos mais diversos campos.
 
-  11: `Sua alma é um radar espiritual. Você sente coisas que não consegue explicar, percebe intenções antes de qualquer palavra ser dita e frequentemente sabe o desfecho das situações antes que elas se concluam. Essa intuição não é imaginação — é o seu sistema de orientação mais confiável.
+À medida que for adquirindo mais sabedoria, poderá, com seu idealismo, influenciar outras pessoas. Poderá ser muito requisitado como conselheiro e confidente. Possui uma visão ampla do mundo à sua volta, devendo dedicar-se à realidade e evitando, portanto, cair em uma vida ilusória, destituída de senso prático.
 
-Por dentro, você carrega uma sensibilidade que pode ser intensa demais em ambientes de baixa frequência. Ambientes tóxicos, conversas vazias e relacionamentos superficiais te esgotam de um jeito que vai além do cansaço físico — é uma exaustão da alma.
+No entanto, caso você não tenha conseguido viver à altura da vibração desse número mestre, o seu número de alma é o 2, derivado de 1 + 1.`,
 
-O que sua essência mais deseja é encontrar pessoas e espaços que vibrem na mesma frequência — onde você possa ser sensível sem ser fraco, intuitivo sem ser julgado, profundo sem ser solitário.`,
+  22: `Quem tem o número de alma 22, ao longo das suas vidas passadas, aprendeu a ter consciência e percepção superiores e atua como o mestre construtor, querendo interferir na realidade, corrigindo erros, aparando arestas, pelo bem e segurança de todos. Idealista, tem uma inteligência privilegiada, espírito de liderança inabalável e capacidade de conquistar grandes vitórias em todos os campos de atuação.
 
-  22: `Sua alma carrega uma visão. Por dentro, você tem imagens de algo grandioso que poderia ser criado, construído ou transformado. Não é arrogância — é a percepção genuína de que você tem capacidade para impactar muitas vidas se escolher usar seus dons em escala.
+Tem sempre como meta contribuir para a construção de um mundo melhor.
 
-A tensão que você sente frequentemente é entre o idealismo da visão e a pragmática da realidade. Por dentro, você sabe que é capaz de muito mais do que está fazendo; por fora, o caminho pode parecer longo demais. Essa distância entre potencial e manifestação é o seu maior campo de trabalho interior.
+No entanto, caso você não tenha conseguido viver à altura das vibrações deste número mestre, o número de alma 4, derivado de 2 + 2, será o seu número de alma.`,
 
-Sua alma se nutre quando você vê o impacto real do que construiu. Não elogios vagos, mas evidências concretas de que algo que você criou está tornando a vida de pessoas reais melhor. Esse é o seu combustível mais puro.`,
+  33: `Quem tem o número de alma 33, ao longo das vidas passadas, aprendeu a dirigir sua vida em função do próximo, iluminando o caminho de todos, sacrificando sua vida particular e inspirando a criação de organizações com fins humanitários. Paciente, caridoso e despojado de qualquer apego material. Possui uma humildade ímpar e uma grande capacidade de compreender o próximo, o que o torna uma pessoa rara.
 
-  33: `Sua alma é feita de amor. Não o amor romântico apenas, mas uma compaixão que abarca tudo — a criança perdida, o ancião só, o estranho no ônibus, a natureza, o silêncio. Você sente uma conexão com a vida que vai além das fronteiras do ego.
-
-Por dentro, você carrega um desejo profundo de curar — não apenas pessoas, mas ambientes, relacionamentos, padrões coletivos. Você percebe a dor invisível dos outros e tem um instinto quase automático de querer aliviá-la.
-
-O que sua alma mais precisa é de permissão para receber. Você dá com tanta naturalidade que esqueceu como é ser cuidado. Quando você aprende a se permitir ser amado — completamente, sem resistência — você se torna ainda mais capaz de dar.`,
+No entanto, caso você não tenha conseguido viver à altura das vibrações deste número mestre, o seu número de alma é o 6, derivado da soma de 3 + 3.`,
 };
 
 const personalidade = {
-  1: `Para o mundo, você projeta confiança e determinação. As pessoas te veem como alguém que sabe onde quer chegar e não pede desculpas por isso. Há uma presença marcante em você — quando você entra em um ambiente, as pessoas percebem.
+  1: `Quem tem o número da personalidade 1 transmite uma imagem de liderança, independência e autoconfiança, que indica capacidade de enfrentar adversidades. Por isso, você será procurado para cuidar de projetos em que essas qualidades sejam necessárias. Os outros veem em você uma capacidade para assumir o controle de qualquer situação, dirigindo com incomparável eficiência e organização.
 
-Você transmite independência. Mesmo quando está em grupo, há uma aura de autoconfiança que faz as pessoas te respeitarem naturalmente. Sua opinião tem peso; sua postura, autoridade. Isso não vem de arrogância — vem de uma clareza genuína sobre quem você é.
+Se agir com equilíbrio, será um líder empreendedor e poderá contar com a confiança e o apoio dos seus comandados.
 
-O que você projeta pode, às vezes, afastar pessoas que precisariam de mais suavidade para se aproximar. Cultivar a gentileza na forma como você se apresenta não diminui sua força — ela a torna mais acessível e, portanto, mais poderosa.`,
+Caso você esteja manifestando os aspectos negativos desse número, procure melhorar seu tato, adquirindo um espírito mais diplomático e agindo com mais paciência, para não correr o risco de parecer uma pessoa autoritária e egoísta.`,
 
-  2: `O mundo te enxerga como alguém gentil, receptivo e confiável. Há algo em você que faz as pessoas se sentirem imediatamente à vontade — como se pudessem baixar a guarda e ser elas mesmas. Esse é um dom raro e precioso.
+  2: `Quem tem o número da personalidade 2 transmite uma imagem de pessoa prestativa, companheira e de grande espírito diplomático. Procura seguir um líder e não gosta de ser o centro das atenções, agindo geralmente nos bastidores. Os outros veem em você uma preocupação exagerada com a opinião alheia e muita sutileza na capacidade de persuasão sobre aqueles que o cercam, jamais demonstrando comportamento autoritário.
 
-Você projeta diplomacia. Em situações de tensão, sua presença naturalmente suaviza os ânimos. As pessoas te procuram para intermediar, para escutar, para oferecer uma perspectiva equilibrada. Sua paciência e sutileza são visíveis — mesmo quando você acha que está apenas sendo normal.
+É também visto como uma pessoa equilibrada e discreta, até na forma de se vestir, e que necessita de ambiente tranquilo para atuar positivamente.
 
-O risco da sua personalidade 2 é ser percebido como indeciso ou sem opinião própria, especialmente quando você está apenas sendo cuidadoso antes de se posicionar. Aprender a expressar seu ponto de vista com a mesma gentileza que você usa para ouvir os outros é o que completa sua presença.`,
+Caso você esteja manifestando os aspectos negativos deste número, deve procurar acreditar mais em si mesmo para não ser inseguro diante de situações que não domina.`,
 
-  3: `Para o mundo, você é luz. Carismático, expressivo e divertido, você é o tipo de pessoa que transforma o ambiente pelo simples fato de estar nele. Seu senso de humor, sua criatividade e sua capacidade de contar histórias fazem de você uma presença magnética.
+  3: `Quem tem o número de personalidade 3 transmite uma imagem de alegria, afeto e otimismo. Não gosta de perder nenhuma festa, em especial aquelas onde pode dar vazão ao seu talento artístico, ao seu espírito comunicativo e ao seu charme. As pessoas veem em você uma pessoa descontraída, imbuída de incomparável senso de humor.
 
-Você projeta entusiasmo e originalidade. As pessoas adoram estar ao seu redor porque você as faz sentir mais vivas, mais inspiradas, mais conectadas com o lado lúdico da vida. Ideias surgem quando você está por perto, e conversas ficam mais interessantes com a sua participação.
+O estilo maleável e a mente fértil dão a essa personalidade condições de tomar parte em qualquer negócio. É sempre bem-vindo, pois contagia todos, e mesmo nos momentos mais difíceis consegue encontrar um lado positivo.
 
-O que pode trabalhar contra você é a percepção de superficialidade quando você está apenas sendo leve. Quando você mostra as camadas mais profundas da sua criatividade e inteligência, as pessoas se surpreendem — e ficam ainda mais encantadas.`,
+Caso você esteja manifestando os aspectos negativos deste número, deverá demonstrar mais seriedade para que não seja visto como uma pessoa fofoqueira e que age de maneira irresponsável em qualquer situação.`,
 
-  4: `O mundo te vê como alguém sólido, confiável e sério. Há uma estabilidade em você que as pessoas percebem intuitivamente — você parece alguém que faz o que promete, que não some nas dificuldades, que pode ser contado nos momentos que importam.
+  4: `Quem tem o número de personalidade 4 transmite uma imagem de solidez e eficiência. Sustenta uma aparência de pessoa confiável e produtiva. Não gosta de superficialidade, desonestidade e covardia. Os outros veem você como alguém que tem uma grande capacidade produtiva e age com muita prudência.
 
-Você projeta competência e organização. Em ambientes profissionais, isso te coloca em posições de responsabilidade naturalmente. As pessoas confiam a você projetos importantes, não porque você se autopromocionou, mas porque sua entrega fala por si.
+Jamais se deixa envolver por propostas levianas e sedutoras, esforçando-se para cumprir seus compromissos. Fiel a regulamentos e normas, é pontual e gosta de seguir uma rotina. Demonstra um apego aos bons costumes: conservador, prefere vestir-se de forma sóbria e clássica, sem nenhuma extravagância.
 
-O desafio da sua personalidade é parecer inflexível ou excessivamente formal para pessoas que precisam de mais leveza. Quando você permite que o seu lado mais humano e bem-humorado apareça, a combinação de seriedade e calor humano se torna irresistível.`,
+Mas se você estiver manifestando os aspectos negativos desse número, deve procurar aceitar mais as opiniões dos outros para não parecer inflexível, demasiadamente controlador e apegado a detalhes.`,
 
-  5: `Para o mundo, você é eletrizante. Sua energia contagia, sua curiosidade inspira e sua liberdade provoca. As pessoas te veem como alguém diferente — não necessariamente fácil de definir, mas impossível de ignorar. Você não se enquadra em categorias prontas, e isso fascina.
+  5: `Quem tem o número da personalidade 5 transmite uma imagem de pessoa curiosa e impaciente, marcantemente na infância. Na adolescência, é visto como amante da aventura, e na fase adulta manifesta espírito dinâmico. As pessoas veem você como alguém avesso à rotina, que gosta de assumir riscos.
 
-Você projeta aventura e abertura. Ao seu redor, conversas viram mais interessantes, planos viram mais ousados e possibilidades que pareciam fechadas de repente se abrem. Você tem o dom de expandir o horizonte das pessoas pelo simples fato de existir.
+Atrai pessoas com seu magnetismo e tem muito senso prático. O passado já ficou para trás, o futuro é algo que um dia chegará; o que importa mesmo é o presente, o que está acontecendo agora. Gosta de liberdade, ambientes novos e não recusa nenhum convite para viagens.
 
-O que pode trabalhar contra você é a percepção de instabilidade ou falta de comprometimento quando você está apenas sendo fiel à sua natureza. Mostrar que você pode ser livre e confiável ao mesmo tempo é o equilíbrio que completa a sua presença no mundo.`,
+Mas se você estiver manifestando aspectos negativos desse número, deve procurar ser mais paciente, concentrando-se naquilo que faz: só assim evitará dispersar suas energias. Sua grande sensualidade pode dificultar a manutenção de relacionamentos fiéis e duradouros.`,
 
-  6: `O mundo te enxerga como protetor e acolhedor. Há uma warmth em você que as pessoas sentem antes mesmo de você dizer uma palavra — algo que comunica segurança, cuidado e presença genuína. Você é o tipo de pessoa que as pessoas ligam quando estão em apuros.
+  6: `Quem tem o número de personalidade 6 transmite, desde criança, uma imagem de afetuosidade e serenidade. Demonstra uma preocupação em buscar a verdade e a justiça. A beleza e a harmonia parecem fazer parte dos seus interesses. As pessoas veem em você alguém com um espírito bondoso, amigável e até mesmo protetor, o que lhe confere uma grande confiabilidade.
 
-Você projeta responsabilidade e harmonia. Em grupos, você naturalmente assume o papel de cuidar das dinâmicas — garantindo que todos se sintam incluídos, que os conflitos sejam resolvidos e que o ambiente seja saudável. Isso não é esforço consciente: é quem você é.
+Demonstra um apego ao lar e à família, sendo dedicado ao casamento e um excelente anfitrião.
 
-O risco da sua personalidade é carregar expectativas que você mesmo criou. Quando as pessoas aprendem que podem contar com você, elas às vezes exigem mais do que você tem para dar. Aprender a cuidar de si com a mesma atenção que você cuida dos outros é o que sustenta sua presença a longo prazo.`,
+Mas se você estiver manifestando os aspectos negativos deste número, deve procurar perdoar os erros dos outros, para não correr o risco de ser visto como uma pessoa orgulhosa.`,
 
-  7: `Para o mundo, você projeta mistério e profundidade. Há algo em você que as pessoas percebem mas não conseguem nomear — uma inteligência silenciosa, uma observação acurada, uma presença que não precisa de palavras para se fazer sentir.
+  7: `Quem tem o número de personalidade 7, quando criança, demonstra uma propensão a desenvolver no futuro trabalhos intelectuais e uma rejeição a atividades que gerem desgaste físico. Os outros o veem como uma pessoa intelectualmente dotada, com uma intuição aguçada e intensamente voltada para a vida espiritual.
 
-Você é visto como alguém pensativo e diferente. Em conversas, você raramente diz o óbvio — quando fala, é algo que faz os outros pararem e pensar. Essa qualidade te dá autoridade intelectual mesmo quando você não está buscando atenção.
+Você parece solitário, absorvido pelos seus pensamentos. Tem uma aparência distinta e refinada e veste-se com sobriedade. Transmite uma aversão a intimidades e brincadeiras fora de hora.
 
-O desafio é que sua reserva pode ser interpretada como frieza ou distância por quem não te conhece. Quando você escolhe se abrir — mesmo que parcialmente — a profundidade que você carinha por dentro se torna ainda mais impactante do que a distância misteriosa.`,
+Mas se estiver manifestando os aspectos negativos desse número, você aparentará ser uma pessoa que prefere ficar isolada, não confiando nos outros e centrando-se em si própria.`,
 
-  8: `O mundo te enxerga como poderoso e determinado. Você projeta uma aura de competência e autoridade que faz as pessoas te respeitarem antes mesmo de conhecerem seus feitos. Há algo em sua postura, em sua forma de falar e de decidir que comunica: esta pessoa sabe o que está fazendo.
+  8: `Quem tem o número da personalidade 8, quando criança, transmite uma imagem de pessoa prestativa e trabalhadora, fazendo muito uso dos seus pertences, em especial o dinheiro. Já na fase adulta, demonstra interesse por projetos ambiciosos nos quais possa assumir o controle e atingir rapidamente a independência financeira.
 
-Você transmite ambição e confiança. Em ambientes profissionais, você naturalmente assume posições de liderança — não necessariamente porque você quis, mas porque as pessoas instintivamente olham para você quando é preciso tomar uma decisão difícil.
+Você aparenta muita vitalidade e disposição para toda atividade de que participa, tanto profissional quanto assistencial. Tem aparência de gente bem-sucedida, preocupada em causar boa impressão.
 
-O risco da sua personalidade é parecer intimidador ou inacessível. Quando você demonstra vulnerabilidade e generosidade além da competência, você se torna não apenas respeitado mas genuinamente admirado — e isso abre portas que o poder sozinho não consegue.`,
+Mas se você estiver manifestando aspectos negativos desse número, aparentará ser uma pessoa autoritária, extremamente crítica, imbuída de um forte espírito de competição.`,
 
-  9: `Para o mundo, você projeta sabedoria e compaixão. As pessoas sentem que você as entende de um jeito que vai além do que foi dito. Há algo em sua presença que comunica: este é um lugar seguro. Você pode ser você mesmo aqui.
+  9: `Quem tem o número da personalidade 9, desde criança, transmite grande preocupação pelo próximo, dividindo seu lanche na escola e dando os brinquedos e as roupas para aqueles que mais necessitam. Sonha com profissões em que possa ajudar os outros.
 
-Você é visto como alguém com visão de mundo ampla e coração generoso. Em conversas, você tem a habilidade de ver além do ponto de vista individual e oferecer perspectivas que ajudam as pessoas a saírem de ciclos de pensamento estreitos. Isso te torna um conselheiro natural.
+Os outros veem você como alguém de um talento especial e desejo de ajudar todos sem esperar nenhuma recompensa. Você é desprovido de qualquer preconceito. As pessoas o reconhecem pelo seu trabalho e espírito hospitaleiro e afetuoso.
 
-O desafio da sua personalidade é a percepção de distância emocional quando você está apenas processando internamente. Quando você permite que as pessoas vejam sua própria vulnerabilidade — e não apenas sua sabedoria — a conexão que se cria é profunda e transformadora.`,
+Mas se estiver manifestando o aspecto negativo desse número, você parecerá uma pessoa pouco confiável, lenta na tomada de decisões, exatamente porque não consegue julgar com a razão. Pode também parecer egoísta e perdido na busca de objetivos utópicos.`,
 
-  11: `O mundo percebe algo especial em você, mesmo que não saiba nomear. Há uma intensidade em seus olhos, uma sensibilidade em suas palavras e uma presença que faz as pessoas sentirem que estão diante de alguém que vê mais do que o normal.
+  11: `Quem tem o número da personalidade 11 apresenta, no começo da vida, muitos medos e dúvidas em relação à sua intuição, assim como manifestações extrassensoriais. Com o tempo, após muito estudo e dedicação, vai adquirindo confiança para expressar o potencial que adquiriu durante as suas vidas.
 
-Você projeta espiritualidade e profundidade intuitiva. As pessoas te procuram em momentos de crise não apenas por conselhos práticos, mas porque sua presença, por si só, tem um efeito calmante e orientador. Você é o tipo de pessoa que as pessoas sentem que devem conhecer, mesmo sem saber por quê.
+Os outros veem você como alguém que está sempre à procura de paz e harmonia entre os homens. Seu espírito de liderança se manifesta de forma pacífica, imbuído dos mais elevados ideais. Você atrai a atenção ao falar e agir, servindo como exemplo. Sua imagem se dirige para as áreas das artes, psicologia e diplomacia.
 
-O risco da sua personalidade 11 é a intensidade que pode sobrecarregar quem está acostumado à superficialidade. Calibrar sua presença — sabendo quando se aprofundar e quando ser leve — é o que torna sua intensidade um dom e não um obstáculo.`,
+Mas quem tem esse número só conseguirá orientar e ensinar a todos como um verdadeiro mestre se agir com humildade. Caso não esteja conseguindo viver à altura das vibrações deste número mestre, estará projetando a imagem de grande dependência, de distanciamento da realidade e obsessão por suas fantasias.`,
 
-  22: `Para o mundo, você projeta visão e capacidade de realização em grande escala. As pessoas te veem como alguém que pensa diferente — não apenas resolver o problema imediato, mas redesenhar o sistema. Há uma grandiosidade na forma como você concebe soluções.
+  22: `Você transmite uma imagem de quem procura alcançar o sucesso no plano material para revertê-lo também em projetos humanitários e filantrópicos. As pessoas veem em você paciência e perseverança. É admirado pelo seu espírito diplomático e refinado, superando os problemas que surgem com eficiência e praticidade.
 
-Você transmite seriedade e potencial. Em ambientes de trabalho, sua capacidade de enxergar o quadro completo te coloca naturalmente em posições estratégicas. As pessoas percebem que você não está apenas pensando no próximo passo — você está construindo algo que durará.
+Faz o melhor que pode para chegar ao seu objetivo. É determinado. É muito procurado porque transmite a imagem de quem resolve problemas de maneira prática e criativa.
 
-O desafio da sua personalidade é a pressão que você coloca sobre si mesmo diante do potencial que os outros percebem em você. Quando você se permite ser humano — imperfeito, em processo — você descobre que o mundo te admira não apenas pelo que você constrói, mas por quem você é enquanto constrói.`,
+Caso você não esteja conseguindo viver à altura das vibrações deste número mestre, poderá demonstrar ser uma pessoa centrada no trabalho, negligenciando tudo à volta, até mesmo a sua família.`,
 
-  33: `O mundo te enxerga como uma fonte de amor e cura. Há algo em sua presença que faz as pessoas se sentirem vistas, aceitas e amadas — não de forma sentimental, mas de uma forma profunda e real que as transforma. Você é um dos raros seres humanos cuja presença, por si só, é terapêutica.
+  33: `Quem tem o número de personalidade 33, se estiver realizando esse número mestre de forma plena, transmitirá uma imagem de humildade e generosidade ímpar. Demonstra que sempre coloca o seu amor, o seu tempo e todos os seus bens materiais à disposição dos outros.
 
-Você projeta generosidade e compaixão sem limite aparente. As pessoas acorrem a você com seus problemas, suas dores e seus sonhos porque sabem — instintivamente — que você não vai julgá-las e que vai encontrar algo valioso no que elas trazem.
+Tal idealismo humanitário se manifesta de várias formas, desde participações em projetos grandiosos até situações mais simples, como recolher um animalzinho doente da rua e levá-lo para casa. As pessoas veem em você alguém dotado de uma grande humildade e amor fraternal.
 
-O risco da sua personalidade 33 é tornar-se um repositório das dores alheias sem espaço para as suas próprias. Quando você aprende a honrar seus próprios limites — e a comunicar quando está cheio — você se torna ainda mais capaz de servir ao amor que é a sua essência.`,
+Caso você não esteja conseguindo viver à altura das vibrações deste número mestre, poderá parecer alguém completamente fora de sintonia com a realidade e fora do mundo em que vive.`,
 };
 
 const licao = {
-  1: `Sua lição de vida é aprender a ser você mesmo — completamente, sem pedir desculpas. Em vidas passadas ou nas fases iniciais desta, você aprendeu a se moldar ao que os outros esperavam, a minimizar sua voz para manter a paz. Agora é hora do contrário.
+  1: `Sua lição de vida é desenvolver a individualidade e a liderança. Ser o seu próprio chefe, não dependendo de ninguém. Você precisa desenvolver a capacidade executiva, tomando você mesmo a iniciativa e nunca esperando os outros dizerem o que deve ser feito. Deve aproveitar seu dom especial para descobrir novos campos de atuação.
 
-A independência que você precisa desenvolver não é apenas prática — é existencial. Significa ter a coragem de definir quem você é pelos seus próprios termos, de tomar decisões que façam sentido para você mesmo quando ninguém ao seu redor entende, de liderar sua própria vida antes de qualquer outra coisa.
+Pessoa de vanguarda, sua originalidade e intuição são uma fonte fértil e inesgotável de ideias. Você deve assumir posições de liderança e autoridade, angariando respeito e notoriedade. Se utilizar sua ambição positivamente, terá sucesso na vida.
 
-Cada vez que você cede o comando da sua existência a uma opinião externa, você adia a sua própria evolução. E cada vez que você age com coragem a partir da sua verdade interior — por menor que seja o gesto — você avança significativamente no seu caminho de alma.`,
+Nunca tenha medo de pôr em prática suas ideias e atuar em áreas inovadoras. Você deve aproveitar sua coragem e sua determinação, não se deixando envolver pela arrogância, pelo orgulho e pelo egoísmo.`,
 
-  2: `Sua lição de vida gira em torno de relacionamentos e equilíbrio. Você veio para aprender a arte da parceria verdadeira — não a fusão que apaga as fronteiras, nem o isolamento que as torna intransponíveis, mas o espaço dinâmico e rico que existe entre dois seres inteiros.
+  2: `Quem tem o número 2 em sua lição de vida entende que deve desenvolver a cooperação com outras pessoas, estabelecendo harmonia onde houver conflitos. Mesmo que não seja o astro principal na atividade em que estiver, poderá realizar-se unindo-se àqueles que têm maior liderança.
 
-Cooperar sem se perder, ser sensível sem se dissolver, confiar sem ingenuidade — esses são os grandes aprendizados do seu caminho. O universo vai colocar em sua vida pessoas e situações que testam exatamente esses limites, repetidamente, até que você encontre o equilíbrio.
+Você deve aproveitar sua grande paciência e perseverança, incluindo-se numa atitude de cooperação e diplomacia para com os outros. Vai preferir trabalhar em grupos que tenham objetivo comum, lutando para mantê-los sempre unidos.
 
-A paciência é uma das suas maiores ferramentas nessa jornada. As coisas que mais importam — vínculos reais, harmonia genuína, paz interior — não se conquistam na pressa. Elas pedem tempo, cuidado e a disposição de olhar honestamente para si mesmo.`,
+Aproveite sua diplomacia e sua paciência para convencer facilmente os outros. Seja fiel e procure dedicar-se com afinco às pessoas que ama. Deve tomar cuidado para não expressar este número negativamente, pois corre o risco de se tornar inseguro e dependente, perdendo o rumo da sua vida.`,
 
-  3: `Sua lição é expressar-se autenticamente. Você veio para aprender a confiar na sua voz — não na voz que agrada, que provoca, que performa — mas na sua voz real, aquela que vem de dentro e que às vezes você mesmo mal consegue ouvir em meio ao barulho.
+  3: `Sua lição de vida é desenvolver a comunicação e a criatividade, aproveitando sua imaginação e o seu dom artístico. Gosta de conversar e tem muita disposição para a vida. Você deve expressar suas próprias ideias e a sua alegria de viver.
 
-A criatividade não é apenas uma habilidade no seu caminho — é uma prática espiritual. Quando você se expressa genuinamente, você não está apenas comunicando: você está cumprindo uma função cósmica de trazer ao mundo algo que só poderia existir através de você. Isso tem peso.
+Deixe fluir a sua intuição e o dom da palavra conseguirá abrir muitas portas. Suas ideias criativas serão decisivas para a solução dos mais diferentes problemas. Ama a liberdade e abomina a monotonia. É extrovertido e adora fazer parte de grupos sociais.
 
-Seu aprendizado passa por superar o medo do julgamento. A crítica que você mais teme virá — e não vai destruí-lo. Na verdade, cada vez que você se expõe e sobrevive, você descobre que a autenticidade é uma proteção muito mais poderosa do que a performance.`,
+Deve evitar dispersar suas atenções, direcionando a sua intensa energia para objetivos mais concretos. Não pode ser excessivamente crítico, tomando cuidado para não se deixar envolver pelo ciúme, pela impaciência ou mesmo pela autodepreciação.`,
 
-  4: `Sua lição é construir com propósito. Você veio para aprender o valor da disciplina, da organização e do trabalho comprometido — não como obrigações externas, mas como expressões de integridade e amor-próprio.
+  4: `Quem tem o número 4 em sua lição de vida geralmente é confiável, metódico e disciplinado. A sua lição de vida é aprender a agir com organização, assumindo apenas os riscos que ofereçam uma boa margem de segurança. Você deve ser abnegado, racional, honesto e paciente, aprendendo a conviver com algumas limitações que a vida possa impor.
 
-O universo vai te colocar em situações onde você precisará terminar o que começa, honrar o que prometeu e construir pacientemente mesmo quando os resultados demoram a aparecer. Essas situações não são punições — são oportunidades de fortalecer a confiança em você mesmo.
+Deve procurar realizar suas tarefas com eficiência e responsabilidade, dando importância aos detalhes, para conquistar assim a confiança das outras pessoas. Agindo com organização e dedicação, construirá um futuro materialmente seguro.
 
-A lição 4 também carrega um ensinamento sobre o corpo e a saúde. Cuidar da sua base física — sono, alimentação, movimento, rotina — é parte do seu caminho espiritual. Quando o templo está em ordem, tudo o mais flui com mais facilidade.`,
+Deve evitar o autoritarismo, a rigidez exagerada e a impaciência, tomando cuidado para não perder o controle quando tudo não é exatamente do jeito que você quer.`,
 
-  5: `Sua lição é abraçar a mudança como aliada. Você veio para aprender que a vida não precisa de controle para ser segura — ela precisa de confiança. A segurança que você busca não está na estabilidade das circunstâncias, mas na solidez da sua relação consigo mesmo.
+  5: `Sua lição de vida é aprender a usar adequadamente a sua liberdade. A vida oferecerá muitas oportunidades, mudanças e aventuras. Somente agindo com responsabilidade, valorizando-se e usando a liberdade de maneira construtiva é que conseguirá o que deseja.
 
-O universo vai trazer mudanças — algumas que você escolheu, muitas que você não escolheu. Cada uma delas é um portal para uma versão mais expandida de si mesmo. A resistência prolonga o desconforto; a abertura o transforma.
+Aproveite seus inúmeros talentos e procure desenvolver a versatilidade para poder lidar com as inúmeras experiências que surgirão ao longo do seu caminho. Você deve aproveitar o seu carisma para ter êxito em atividades que envolvam contato com o público.
 
-Sua evolução também passa por aprender a usar a liberdade com sabedoria. Não toda porta que se abre precisa ser cruzada; não toda oportunidade precisa ser abraçada. Discernir entre o impulso que expande e o impulso que dispersa é uma das habilidades mais sofisticadas do seu caminho.`,
+Não abuse da sua grande sensualidade e não permita que a rotina o aborreça, tomando cuidado para não sucumbir à irresponsabilidade, à dispersão e a vícios tais como bebida ou drogas.`,
 
-  6: `Sua lição envolve amor, responsabilidade e fronteiras. Você veio para aprender a cuidar — de verdade, com presença — sem se perder no cuidado. O equilíbrio entre dar e receber, entre servir e se preservar, é o coração do seu aprendizado.
+  6: `Sua lição de vida é desenvolver o senso de responsabilidade para com a família e a comunidade. Deve aprender também a ter um bom senso de justiça. Você deve dar ajuda e conforto às pessoas que o procuram, colocando o bem-estar do grupo, da família e da comunidade acima do seu.
 
-O universo vai te colocar em situações onde você precisará dizer não com amor, onde precisará deixar as pessoas enfrentarem as consequências das próprias escolhas, onde precisará reconhecer que nem todo problema é seu para resolver. Cada um desses momentos é uma aula.
+É fundamental que desenvolva o senso de justiça, aprendendo a encontrar o equilíbrio em situações em que haja conflito. A arte e a beleza o fascinam e ajudarão a deixá-lo em harmonia com as pessoas e os ambientes que frequenta.
 
-Sua lição também carrega a cura da família — seja a família de origem ou a que você constrói. Padrões emocionais antigos pedem reconhecimento e transformação. Quando você os vê com clareza e decide conscientemente quais perpetua e quais dissolve, você libera não apenas a si mesmo, mas as gerações que virão.`,
+Não pode deixar o espírito fraternal de lado, tomando cuidado para não ser envolvido por um orgulho excessivo e um espírito egocêntrico. Procure controlar sua possessividade para que não interfira de forma negativa na vida das outras pessoas.`,
 
-  7: `Sua lição é confiar no que não pode ser visto. Você veio para aprender que existem dimensões da realidade que não se provam — apenas se experienciam. A fé, a intuição e o mistério são partes legítimas da sua jornada, não ilusões a serem descartadas pela razão.
+  7: `Sua lição de vida é conhecer a si próprio e confiar na sua intuição para então encontrar o seu caminho. Através de um trabalho de autoconhecimento, você buscará respostas para os mistérios da vida. Evite aceitar a opinião dos outros como a palavra final, pesquisando bastante até chegar a uma conclusão própria.
 
-O universo vai te convidar repetidamente à solitude e à contemplação. Não como punição, mas como o ambiente onde você tem acesso às suas percepções mais profundas. Resistir a isso é como tentar ver as estrelas com as luzes da cidade acesas — possível, mas muito mais difícil.
+Você optará por conviver com pessoas que tenham objetivos semelhantes e os mesmos questionamentos. Procure compreender a vida estudando a filosofia em geral e as ciências esotéricas, nas quais encontrará informações e conceitos fundamentais para a sua realização.
 
-Seu aprendizado também passa por compartilhar o que você descobre. A sabedoria acumulada em solidão só se completa quando encontra o mundo. Escrever, ensinar, conversar, criar — qualquer forma que você escolher de exteriorizar o seu interior é parte integral da sua missão.`,
+Esta é uma lição de intensa espiritualidade. Não seja demasiadamente impaciente. Evite também o isolamento, não se deixando envolver pela melancolia. Cuidado para que as dúvidas não o tornem uma pessoa insegura.`,
 
-  8: `Sua lição é uma relação saudável com poder e abundância. Você veio para aprender que prosperidade não é sorte — é uma consequência natural de agir com integridade, utilizar seus talentos com coragem e colocar sua energia a serviço de algo significativo.
+  8: `Quem tem o número de lição de vida 8 deverá aprender a lidar de maneira positiva e ponderada com o mundo material e o poder. Você deverá agir com determinação e conhecimento do que está fazendo. Poderá construir um império comercial e o seu sucesso será motivo de inspiração para muita gente.
 
-O universo vai testar sua relação com dinheiro, autoridade e reconhecimento de formas variadas. Haverá ciclos de abundância e escassez, de poder e vulnerabilidade. Cada ciclo ensina algo que o anterior não podia ensinar. Resistir aos ciclos os prolonga; fluir com eles os acelera.
+Aproveite a sua ambição e a sua capacidade de organização. Confie em si próprio e desenvolva sua grande habilidade administrativa e executiva. É necessário ter excelente equilíbrio e discernimento para julgar e encontrar a verdade. Seja realista e não alimente fantasias.
 
-Sua maior lição está em entender que o poder externo é apenas um reflexo do poder interno. Quando você lidera a partir de valores, age a partir de propósito e constrói a partir de integridade, a abundância não é apenas um resultado — é um estado natural de ser.`,
+Não pode ser excessivamente ambicioso, tomando cuidado para não se deixar envolver pela avareza, pelo materialismo e pelo egoísmo. Atenção para o abuso de poder.`,
 
-  9: `Sua lição é completude e desapego. Você veio ao final de um ciclo de aprendizado de alma — o número 9 carrega a sabedoria de todos os números anteriores e pede que você agora a utilize em serviço, sem apego aos frutos da ação.
+  9: `Sua lição de vida é desenvolver a compaixão e a capacidade de doar-se sem esperar nada em troca, pelo simples prazer de ser útil a alguém. Sensível e idealista, você poderá ficar frequentemente desapontado com as imperfeições do mundo. Romântico, quando estiver amando, apaixonar-se-á profundamente.
 
-O universo vai te colocar em situações de encerramento — relacionamentos que terminam, fases que se concluem, versões de si mesmo que precisam ser deixadas para trás. Sua evolução depende da sua capacidade de honrar esses encerramentos com gratidão, sem agarrar o que já cumpriu seu propósito.
+Você é criativo e, ao usar seus talentos, conseguirá angariar facilmente o reconhecimento público e a amizade dos que o cercam. Você deve aprender a preservar e utilizar as riquezas que vier a acumular em proveito dos mais necessitados.
 
-Sua lição mais profunda é descobrir que você é mais do que sua história. As experiências que acumulou, as dores que carrega e as conquistas que alcançou são capítulos — não o livro inteiro. Quando você encontra o narrador por trás de todas as histórias, encontra sua essência mais verdadeira.`,
+Procure entender que o verdadeiro caminho da felicidade é servir aos outros e nunca agir de forma mesquinha. Suas recompensas virão naturalmente. Deve tomar cuidado para não se deixar envolver pelo egoísmo, pela falta de ética e pela indiferença.`,
 
-  11: `Sua lição é confiar na sua percepção. Você veio com um nível de sensibilidade e intuição que o mundo convencional frequentemente desqualifica — e você, em resposta, aprendeu a questionar o que sente, a racionalizá-lo ou a silenciá-lo. Sua evolução exige o caminho oposto.
+  11: `Este é um número de importância espiritual, sujeito a ansiedade e instabilidade emocional. Para viver à altura do seu ideal, precisará ter talento e coragem. Sua lição de vida é aprender a tomar consciência do mundo espiritual e a relacionar-se com o mundo material, vivenciando os seus ideais e trabalhando para torná-los realidade.
 
-O universo vai te colocar em situações onde a lógica aponta para um lado e a sua intuição aponta para outro. Cada vez que você honra o que percebe — mesmo sem poder explicar — e está certo, você fortalece a confiança nesse sistema interno extraordinário que você possui.
+Você é idealista e perfeccionista. O seu magnetismo pessoal e a sua capacidade de compreensão ajudarão a atrair as outras pessoas. Você deve aprender a desenvolver a sua intuição, procurando transmitir todo o seu conhecimento e sabedoria para os outros e abrindo novos caminhos para que estes possam seguir.
 
-Sua lição também envolve aprender a viver com alta sensibilidade em um mundo de baixa frequência. Criar ambientes que te nutram, desenvolver práticas que te protejam e encontrar pessoas que vibrem em sintonia com você não é luxo — é necessidade espiritual e pré-requisito para cumprir sua missão.`,
+Deve tomar cuidado para não ser envolvido pela ambição, a qual poderá trazer a sua ruína, pois o seu sucesso estará sempre associado ao bem da humanidade. Caso não vivencie esta lição à altura do ideal deste número mestre, deve consultar a lição de vida 2.`,
 
-  22: `Sua lição é manifestar em grande escala sem perder o chão. Você veio com a capacidade de transformar visões extraordinárias em realidades concretas — mas essa capacidade só se desenvolve quando você aprende a equilibrar o sonho com a disciplina, a inspiração com a execução.
+  22: `Este é um número mestre de importância espiritual voltada para a realização material. Sua lição de vida é desenvolver sua capacidade de transformar sonhos em grandes obras, que beneficiem muitas pessoas em âmbito nacional ou até mesmo mundial.
 
-O universo vai te dar visões que parecem grandes demais. Sua tendência pode ser recuar diante da grandiosidade ou, pelo contrário, se perder no idealismo sem nunca colocar a mão na massa. Ambos são desvios. O caminho do 22 é o da construção paciente e corajosa.
+Você é mestre construtor e terá o poder de ser bem-sucedido em qualquer área que lhe interessar. Possui alto nível de consciência e uma capacidade ímpar de compreensão. O seu desafio é descobrir como usar todos esses dons de maneira produtiva.
 
-Sua maior lição está em servir. O 22 não foi dado para acumulação pessoal — foi dado para impacto coletivo. Quando você percebe que os recursos, o talento e a visão que possui são ferramentas a serviço de algo maior, o universo se reorganiza para apoiar o que você está construindo.`,
+Deve tomar cuidado para não se deixar envolver pela avareza, pela corrupção e pela manipulação. Caso não vivencie esta lição à altura do ideal deste número mestre, deve consultar a lição de vida 4.`,
 
-  33: `Sua lição é amar sem condições e sem se dissolver. Você veio com uma capacidade de amor que transcende os limites do pessoal — você sente o coletivo, o universal, o que ainda não tem nome. Sua evolução está em aprender a expressar esse amor de forma sustentável.
+  33: `Sua lição de vida é aprender a doar-se em prol de seus semelhantes. Este é um número de importância espiritual, sujeito a ansiedade e instabilidade emocional. Para viver à altura do seu ideal, precisará ter amor incondicional e coragem.
 
-O universo vai te colocar em situações onde o amor incondicional é testado — onde você precisará amar alguém que te magoou, servir sem reconhecimento, permanecer presente diante da dor alheia sem perder sua centralidade. Cada um desses testes é uma iniciação.
+Você deve procurar servir aos outros e sua recompensa será destinada à continuidade da sua obra. Jamais conseguirá exercer uma profissão que vise o benefício próprio. Seu exemplo de coragem, determinação e humildade servirá como estímulo à humanidade.
 
-Sua lição mais profunda é entender que você não pode dar o que não tem. Cuidar de si — com a mesma compaixão que você oferece ao mundo — não é egoísmo, é a condição necessária para que o amor que você carrega continue fluindo. Você é o canal; mantenha o canal limpo.`,
+No entanto, é muito difícil vivenciar integralmente este número mestre, pois ele exige uma entrega pessoal plena. As pessoas que possuem o número 33 como lição de vida dificilmente conseguem viver à altura do potencial deste número, devendo então consultar a lição de vida 6.`,
 };
 
-export const INTERPRETACOES = { destino, alma, personalidade, licao };
+const anoPessoal = {
+  1: `Este é um ano de muita ação para você plantar as sementes que determinarão o seu futuro. Como se trata do início de um novo tempo, é fundamental mudar suas atitudes. Seja ambicioso, tenha coragem, confie na sua capacidade e tome a iniciativa. Não permita que ninguém atrapalhe seu caminho e nunca se deixe influenciar. Visualize o que você quer, estabeleça um objetivo claro e faça um plano de ação. Tudo que você desejar positivamente poderá conseguir.`,
+  2: `Este é um ano de espera. Seja paciente. Não haverá mudanças significativas no plano material. Não se preocupe caso às vezes tenha que recuar. Pode parecer que você dá um passo para frente e dois para trás, mas a caminhada é assim mesmo. Faça parcerias. Tenha tato e diplomacia para trabalhar em cooperação com os outros. Analise sempre as variáveis envolvidas e evite grandes planos ou mudanças.`,
+  3: `Este é um ano para comunicar-se, criar e estar entre as pessoas. Você poderá começar a colher os frutos que plantou dois anos atrás. É um período de expansão e muita atividade. Esteja mais com a família e os amigos. Faça contatos sociais e comerciais. Mas dose bem a sua energia, evitando extravagâncias. Seja otimista e utilize os seus talentos criativos. Desenvolva a sua capacidade mental, estudando e viajando.`,
+  4: `É um período de trabalho duro, e você poderá ter a sensação de limitação, frustração e aborrecimento. Mas não perca a paciência, pois o sucesso vem mais lentamente do que o esperado e no futuro seus esforços serão recompensados. Aproveite o ano para construir sólidas fundações para o futuro, fortalecendo suas relações profissionais. Evite trocar de emprego ou mudar seu local de residência. Seja prático e lógico. Esteja atento à sua saúde física e mental.`,
+  5: `É um ano de mudanças. Esteja de malas prontas para enfrentar o imprevisto. É um período ideal para o crescimento pessoal e expansão dos seus horizontes. É tempo propício para mudar de ares: um novo trabalho ou casa nova. Abandone as antigas rotinas. Esteja aberto a oportunidades: viagens, paixões, novas amizades e novos desafios. Seja flexível, pois tudo pode mudar a qualquer momento.`,
+  6: `Este é um ano centrado no amor, na sua família e na sua comunidade. É um período para assumir responsabilidades e fazer ajustes. Cuide da sua saúde, da sua beleza e do que está à sua volta. As pessoas vão procurá-lo em busca de conselhos e ajuda. Ofereça um ombro amigo. É um bom período para construir um lar e encontrar um parceiro afetivo. Invista na sua casa: compre, reforme e decore. Há boas chances de você atingir sucesso profissional.`,
+  7: `Neste ano você precisa dar um tempo, procurando desenvolver mais sua consciência espiritual. Faça uma avaliação dos passos que está tomando até agora, dos seus resultados e das ações a serem empreendidas para o futuro. Não force nenhuma situação que possa provocar mudanças radicais. As oportunidades poderão vir ao seu encontro. Procure ter convívio maior com a natureza. Confie na sua intuição.`,
+  8: `Os resultados deste ano vão depender dos seus atos passados e de como você investiu sua energia, a partir do momento em que plantou a sua semente. A princípio é um bom ano para progresso material. Procure equilibrar-se física e mentalmente. Aproveite cada segundo do seu tempo. Mantenha seu entusiasmo e energia, pois agora você poderá realizar mais do que em qualquer um dos últimos 7 anos. Mas cuidado, pois se você perder a calma, colocará em risco tudo que conseguiu até agora.`,
+  9: `Este é o ano de fechamento do ciclo. É quando você faz um balanço do passado, desprezando o que não serve mais, e começa a pensar no futuro. Coloque o passado em seu devido lugar. É um período em que você pode estar mais fragilizado. Não vacile; se for preciso, corte os laços que o amarram para poder renascer. Finalize os projetos em andamento e não inicie nada muito importante, pois há risco de não ser duradouro. Pense mais nos outros do que em você. Este é um período de doação, tolerância, abnegação e perdão.`,
+};
+
+const ausencia = {
+  1: 'Desenvolva a iniciativa e a força de vontade. Procure resolver seus problemas sozinho. Comece a ser seu próprio líder; só assim conseguirá criar autoconfiança.',
+  2: 'Procure aprender a ouvir, colocando-se no lugar dos outros e desenvolvendo o espírito de cooperação.',
+  3: 'Procure desenvolver a sociabilidade, a comunicação e a alegria. Seja mais otimista e procure participar de atividades em grupo.',
+  4: 'Procure ser mais organizado e responsável, trabalhando com mais dedicação. Estabeleça um objetivo e trace um plano de ação para atingi-lo.',
+  5: 'Abra-se para o mundo exterior. Liberte-se dos preconceitos e pré-julgamentos que fazemos dos outros; só assim você encontrará novos horizontes.',
+  6: 'Desenvolva a responsabilidade e o equilíbrio interior. Dedique-se mais à fraternidade e à harmonia familiar.',
+  7: 'Desenvolva mais a sua espiritualidade. Procure buscar a sua própria essência espiritual através da meditação e estudando religião e filosofia.',
+  8: 'Procure desenvolver a responsabilidade nos assuntos financeiros. Seja mais cuidadoso com o seu dinheiro e esteja atento ao fazer qualquer tipo de negócio.',
+  9: 'Desenvolva a compaixão e a solidariedade. Esteja atento às necessidades dos outros. Respeite a liberdade e o espaço de cada um.',
+};
+
+const excesso = {
+  1: 'Dê uma chance aos outros, não queira fazer tudo sozinho. Tome cuidado com o orgulho e o desejo de autoridade em demasia.',
+  2: 'Não deixe que os outros usem e abusem da sua paciência. Cuidado para não ser explorado.',
+  3: 'Tome cuidado para não falar demais, pondo em risco o que você construiu. Saiba estabelecer um objetivo real na sua vida.',
+  4: 'Cuidado com a obsessão pelo trabalho. Lembre-se da família e dos amigos. Divirta-se mais e nunca se esqueça de que, além das necessidades materiais, temos as afetivas e as espirituais.',
+  5: 'Controle a sua ansiedade e procure concentrar mais sua atenção naquilo que você estiver fazendo. Estabeleça objetivos claros.',
+  6: 'Evite proteger demasiadamente as pessoas de quem você gosta, pois elas podem tornar-se extremamente inseguras e dependentes.',
+  7: 'Abra-se para o mundo e compartilhe com os outros os seus conhecimentos. Procure trabalhar em atividades nas quais possa pesquisar e ajudar os seus semelhantes.',
+  8: 'Tome cuidado para não ficar obcecado pelo dinheiro nem ser seduzido por uma vida extremamente materialista. Controle o seu desejo de manipular as pessoas.',
+  9: 'Tome cuidado com o seu desejo de resolver os problemas de todo o mundo. É preciso, antes de mais nada, alcançar o equilíbrio emocional.',
+};
+
+const cristal = {
+  1: { nome: 'Granada', subtitulo: 'Força e Vigor', cor: 'Vinho', texto: 'A Granada vai facilitar o desenvolvimento do potencial do número 1, aumentando o vigor físico, a força, a energia, a imaginação e a criatividade. Pode auxiliar no tratamento de anemia, pressão baixa, cólicas, problemas menstruais e má circulação sanguínea. É rejuvenescedora.', afirmacao: 'A Granada me traz a força e a coragem para seguir rumo à vitória.' },
+  2: { nome: 'Quartzo Rutilado', subtitulo: 'Autoconfiança e Determinação', cor: 'Dourado', texto: 'O Quartzo Rutilado vai facilitar o desenvolvimento do potencial do número 2, ajudando as pessoas indecisas a criar autoconfiança, autocontrole, paciência e determinação, necessários para superar as suas dificuldades. Pode ajudar na assimilação dos nutrientes e na regeneração dos tecidos, retardando o envelhecimento.', afirmacao: 'O Quartzo Rutilado me beneficia, desenvolvendo a minha autoconfiança e diplomacia.' },
+  3: { nome: 'Amazonita', subtitulo: 'Comunicação e Criatividade', cor: 'Verde-Azulado', texto: 'A Amazonita vai facilitar o desenvolvimento do potencial do número 3, ajudando as pessoas a melhorar a capacidade de comunicação. Este cristal contribui para o desenvolvimento da eloquência, da comunicação e da criatividade, afastando os preconceitos e abrindo o caminho para o sucesso profissional. Pode ajudar no equilíbrio do sistema nervoso.', afirmacao: 'A Amazonita me ajuda a dizer as palavras certas na hora certa, com alegria e otimismo.' },
+  4: { nome: 'Quartzo Verde', subtitulo: 'Estabilidade e Segurança', cor: 'Verde', texto: 'O Quartzo Verde vai facilitar o desenvolvimento do potencial do número 4, ajudando a colocar ordem na sua vida. Traz estabilidade e segurança. É uma das pedras que favorecem o equilíbrio energético do coração e dos pulmões, através de sua atividade no chacra cardíaco. Beneficia a circulação sanguínea e a respiração.', afirmacao: 'O Quartzo Verde traz a estabilidade e a disciplina para o meu trabalho e minha vida.' },
+  5: { nome: 'Água-Marinha', subtitulo: 'Clareza e Equilíbrio Emocional', cor: 'Azul-Claro', texto: 'A Água-Marinha vai facilitar o desenvolvimento do potencial do número 5, trazendo clareza de raciocínio, aliviando medos e fobias, ajudando a desenvolver a tolerância e o sentimento de paz. Colabora com o equilíbrio emocional. Desbloqueia a energia concentrada na região da garganta, das cordas vocais, laringe e tireoide.', afirmacao: 'A Água-Marinha me acalma e traz paz e novos caminhos.' },
+  6: { nome: 'Quartzo Azul', subtitulo: 'Harmonia e Luz Interior', cor: 'Azul', texto: 'O Quartzo Azul vai facilitar o desenvolvimento do potencial do número 6, favorecendo a manifestação da harmonia, dissolvendo os traumas emocionais e a depressão. Também ajuda a desenvolver o nosso potencial de luz e as nossas qualidades interiores. É indicado para problemas de garganta, laringe e timo.', afirmacao: 'O Quartzo Azul me acalma e traz harmonia para os meus relacionamentos familiares e sociais.' },
+  7: { nome: 'Ametista', subtitulo: 'Purificação e Sabedoria', cor: 'Violeta', texto: 'A Ametista vai facilitar o desenvolvimento do potencial do número 7, ajudando a ampliar sua autoconsciência e sua percepção interior. É uma das pedras mais importantes, pois consegue purificar não apenas a sua energia, mas também a energia do ambiente onde vive ou trabalha. A Ametista transforma suas desarmonias e defeitos em harmonias e virtudes.', afirmacao: 'A Ametista me purifica e ajuda a desenvolver a minha sabedoria.' },
+  8: { nome: 'Citrino', subtitulo: 'Sucesso Material e Equilíbrio', cor: 'Amarelo Dourado', texto: 'O Citrino vai facilitar o desenvolvimento do potencial do número 8, aumentando sua autoconfiança e sua segurança, pois seus raios dourados estimulam as atividades no plano físico, atraindo bens materiais. É a pedra do sucesso material. Colabora com o equilíbrio físico e emocional. O Citrino melhora a digestão dos alimentos e dos nossos problemas, assim como protege nosso corpo contra as energias negativas.', afirmacao: 'O Citrino me traz o sucesso, o equilíbrio mental e o senso de justiça.' },
+  9: { nome: 'Quartzo Rosa', subtitulo: 'Amor e Compaixão', cor: 'Rosa', texto: 'O Quartzo Rosa vai facilitar o desenvolvimento do potencial do número 9, ajudando a expandir a energia de amor dentro de nós. Dissolve as tristezas, as mágoas, a rejeição e a carência afetiva, deixando em seu lugar o amor e a compaixão.', afirmacao: 'O Quartzo Rosa purifica meu coração e devolve minha compaixão.' },
+  11: { nome: 'Ametista', subtitulo: 'Purificação e Sabedoria', cor: 'Violeta', texto: 'A Ametista vai facilitar o desenvolvimento do potencial do número 11, ajudando a ampliar sua autoconsciência e sua percepção interior. É uma das pedras mais importantes, pois consegue purificar não apenas a sua energia, mas também a energia do ambiente onde vive ou trabalha.', afirmacao: 'A Ametista me purifica e ajuda a desenvolver a minha sabedoria e intuição.' },
+  22: { nome: 'Citrino', subtitulo: 'Sucesso Material e Equilíbrio', cor: 'Amarelo Dourado', texto: 'O Citrino vai facilitar o desenvolvimento do potencial do número 22, aumentando sua autoconfiança e sua segurança para manifestar grandes visões no plano físico. É a pedra do sucesso material e da realização de projetos em grande escala.', afirmacao: 'O Citrino me traz o poder de transformar visões em grandes realizações.' },
+  33: { nome: 'Quartzo Rosa', subtitulo: 'Amor e Compaixão', cor: 'Rosa', texto: 'O Quartzo Rosa vai facilitar o desenvolvimento do potencial do número 33, ajudando a expandir a energia de amor universal. Dissolve as tristezas, as mágoas e a carência afetiva, deixando em seu lugar o amor incondicional e a compaixão que é a essência do número 33.', afirmacao: 'O Quartzo Rosa purifica meu coração e expande o amor que sirvo ao mundo.' },
+};
+
+// ── TEXTOS FIXOS DE INTRODUÇÃO DAS SECÇÕES ─────────────────────────────────
+export const INTROS = {
+  boasVindas: `Nesse documento você irá encontrar respostas para várias de suas perguntas e descobrir o que o motiva a ter algumas atitudes que muitas vezes você mesma não consegue entender.
+
+Nas próximas páginas você irá reencontrar o poder oculto que existe no seu nome e de que maneira a energia dos números pode ser utilizada ao seu favor em diversos aspectos da vida.
+
+Além de alguns conselhos para perceber aspectos que você pode melhorar pelo seu próprio compromisso de auto aprimoramento.
+
+As informações compiladas nesse documento se baseiam no Pitagorismo (ou Escola Pitagórica) fundado pelo grande filósofo Pitágoras de Samos que foi um dos principais matemáticos da Grécia Antiga. Segundo eles "tudo é número" — os números são a base da vida na terra e representam a harmonia e a ordem, sendo considerados a essência de todas as coisas de forma não apenas matemática, mas também mística e espiritual.`,
+
+  alma: `As vogais trazem uma energia oculta escondida no inconsciente, ou na "alma". Para entender melhor esse processo, a numerologia estuda essa energia acumulada através da soma das vogais do seu nome.
+
+Assim você pode tomar conhecimento do potencial desenvolvido em suas outras vidas, o que agora fornece as ferramentas para você lidar com a vida atual. O número da alma também indica os seus sentimentos mais profundos e a motivação da própria alma da qual nem sempre estamos conscientes.`,
+
+  personalidade: `As consoantes são associadas às imagens, aquilo que está aparente para que todos vejam. Como você se apresenta para as pessoas e consequentemente como é vista por elas.
+
+O que os outros pensam ao seu respeito? Qual é a sua imagem perante as pessoas? Muitas vezes você não percebe como as suas atitudes estão sendo interpretadas e como você se apresenta. Essa imagem pode não corresponder aquilo que você é realmente.
+
+Através da soma das consoantes do seu nome poderemos descobrir o que os outros pensam ou esperam de você.`,
+
+  destino: `Quais são as suas capacidades latentes? Quais caminhos você deve seguir? Quais habilidades você deve desenvolver?
+
+O número do destino poderá influenciar o tipo de profissão ou ocupação que você desenvolve. Embora a energia do seu nome possa ser modificada quando ele é alterado no casamento ou mesmo quando é assinado de uma forma diferente, a vibração do número do destino é gerada pelo nome de registro de nascimento e, portanto, sempre será a energia fundamental que ficará por trás de suas atitudes e de seus talentos.
+
+Com certeza você tem uma missão — é o seu propósito, o caminho que você necessita seguir para a sua realização pessoal e espiritual. É através do número do destino, formado pela soma de todas as letras do nome, que poderá descobrir como manifestar os seus potenciais, contribuindo assim para essa realização.`,
+
+  licao: `A energia que vem da nossa data de nascimento. O que viemos aprender nessa vida?
+
+Como aproveitar as situações que surgem para transformá-las em oportunidades? Quais as nossas qualidades e atitudes que são orientadas pela lição de vida?
+
+Nós vamos nos deparar com situações que farão com que aprendamos uma grande lição nessa nossa existência: a nossa lição de vida. O número da lição de vida traz as qualidades que devemos desenvolver — ele é obtido através da soma dos números que compõem a nossa data de nascimento reunidos num único algarismo, exceto em caso de números mestres (11, 22 e 33).`,
+
+  anoPessoal: `O Ano Pessoal revela as energias e os temas predominantes do seu ciclo anual. Cada pessoa vive um ciclo de 9 anos, e cada ano dentro desse ciclo traz uma vibração específica que orienta os desafios, as oportunidades e o foco ideal para aquele período.
+
+Para calcular o seu Ano Pessoal, somamos o dia e o mês do seu nascimento com o ano corrente, reduzindo ao número final.`,
+
+  potencialidades: `O nosso nome e nossa data de nascimento trazem nosso potencial acumulado em vidas passadas, a imagem como somos vistos, nossa missão neste mundo e a nossa lição de vida.
+
+Mas a numerologia também permite outras análises importantes, nas quais encontramos os nossos pontos fracos — ou seja, nas quais podemos ter excessos, carência ou mesmo ausência de alguns números.
+
+Como o importante na nossa vida é o equilíbrio, precisamos descobrir estes nossos pontos fracos para então aprender a lidar com eles. As ausências denotam a existência de potenciais não desenvolvidos. Os excessos sinalizam um potencial muito forte em relação aos outros números — procure dar mais atenção ao que você tem de carência, desenvolvendo essas características.`,
+
+  cristais: `Os cristais são ferramentas de energização que potencializam as qualidades do seu número e auxiliam a superar os desafios indicados pelo seu mapa numerológico.
+
+Segure o seu cristal com as duas mãos, feche os olhos e sinta a sua energia revigorante penetrando pela palma das suas mãos a cada inspiração (três vezes). Finalmente, abra os olhos e repita três vezes a afirmação indicada.`,
+};
+
+export const INTERPRETACOES = { destino, alma, personalidade, licao, anoPessoal, ausencia, excesso, cristal };

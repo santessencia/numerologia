@@ -19,53 +19,36 @@
       </a>
     </div>
 
-    <div id="relatorio-wrapper">
+    <!-- ═══════════════════════════════════════════
+         RELATÓRIO WEB (visível na página)
+    ═══════════════════════════════════════════ -->
+    <header class="rel-header">
+      <span class="rel-marca">✦ &nbsp; Chave da Essência &nbsp; ✦</span>
+      <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+      <h1 class="rel-nome" id="rel-nome"></h1>
+      <p class="rel-data-nasc" id="rel-data"></p>
+    </header>
 
-      <!-- CAPA DO PDF (oculta na web) -->
-      <div class="pdf-capa" id="pdf-capa">
-        <span class="pdf-capa-marca">Chave da Essência · Numerologia Pitagórica</span>
-        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
-        <h1 class="pdf-capa-titulo">Mapa Numerológico</h1>
-        <p class="pdf-capa-subtitulo">Uma leitura profunda da sua essência</p>
-        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
-        <p class="pdf-capa-nome" id="capa-nome"></p>
-        <p class="pdf-capa-data" id="capa-data"></p>
-        <p class="pdf-capa-gem">✦ &nbsp; ✦ &nbsp; ✦</p>
+    <section class="destino-secao">
+      <span class="destino-label">Número do Destino</span>
+      <div class="destino-halo">
+        <div class="destino-numero-grande" id="destino-numero"></div>
       </div>
+      <div class="destino-arcano" id="destino-arcano"></div>
+      <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+      <div class="destino-texto container" id="destino-texto"></div>
+    </section>
 
-      <!-- Cabeçalho do relatório -->
-      <header class="rel-header">
-        <span class="rel-marca">✦ &nbsp; Chave da Essência &nbsp; ✦</span>
-        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
-        <h1 class="rel-nome" id="rel-nome"></h1>
-        <p class="rel-data-nasc" id="rel-data"></p>
-      </header>
+    <h2 class="cards-titulo">Os outros números do seu mapa</h2>
+    <div class="cards-container" id="cards-container"></div>
 
-      <!-- Número do Destino -->
-      <section class="destino-secao">
-        <span class="destino-label">Número do Destino</span>
-        <div class="destino-halo">
-          <div class="destino-numero-grande" id="destino-numero"></div>
-        </div>
-        <div class="destino-arcano" id="destino-arcano"></div>
-        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
-        <div class="destino-texto container" id="destino-texto"></div>
-      </section>
+    <footer class="rel-footer">
+      <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
+      <span class="rel-footer-marca">Chave da Essência</span>
+      <p>Numerologia Pitagórica · Os números revelam o que a alma já sabe</p>
+    </footer>
 
-      <!-- Cards secundários -->
-      <h2 class="cards-titulo">Os outros números do seu mapa</h2>
-      <div class="cards-container" id="cards-container"></div>
-
-      <!-- Rodapé do relatório -->
-      <footer class="rel-footer">
-        <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
-        <span class="rel-footer-marca">Chave da Essência</span>
-        <p>Numerologia Pitagórica · Os números revelam o que a alma já sabe</p>
-      </footer>
-
-    </div><!-- fim #relatorio-wrapper -->
-
-    <!-- Botão PDF fora do wrapper para não entrar no PDF -->
+    <!-- Botão PDF -->
     <div class="btn-pdf-wrapper">
       <button class="btn-pdf" id="btn-pdf">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -73,10 +56,85 @@
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-        Baixar Mapa em PDF
+        Baixar Mapa Completo em PDF
       </button>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════
+       TEMPLATE PDF (oculto na web, capturado pelo html2pdf)
+  ═══════════════════════════════════════════ -->
+  <div id="pdf-template" style="display:none;">
+    <div id="relatorio-wrapper">
+
+      <!-- CAPA -->
+      <div class="pdf-capa" id="pdf-capa">
+        <span class="pdf-capa-marca">✦ &nbsp; Chave da Essência &nbsp; ✦</span>
+        <div class="pdf-capa-divider"></div>
+        <p class="pdf-capa-pretitulo">Análise do</p>
+        <h1 class="pdf-capa-titulo">Mapa Numerológico</h1>
+        <p class="pdf-capa-subtitulo">Uma leitura profunda da sua essência</p>
+        <div class="pdf-capa-divider"></div>
+        <p class="pdf-capa-nome" id="capa-nome"></p>
+        <p class="pdf-capa-data" id="capa-data"></p>
+        <p class="pdf-capa-gem">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <p class="pdf-capa-rodape">Numerologia Pitagórica · Escola de Pitágoras de Samos</p>
+      </div>
+
+      <!-- BOAS-VINDAS -->
+      <div class="pdf-pagina pdf-boas-vindas">
+        <div class="pdf-pagina-header">
+          <span class="pdf-marca-topo">Chave da Essência</span>
+        </div>
+        <h2 class="pdf-bv-titulo">Boas-vindas</h2>
+        <p class="pdf-bv-saudacao">Olá, Consciência de Luz!</p>
+        <div class="pdf-bv-texto">
+          <p>Antes de mais nada, agradecemos por escolher compartilhar este momento tão importante da sua jornada de autoconhecimento e expansão de consciência.</p>
+          <p>Nesse documento você irá encontrar respostas para várias de suas perguntas e descobrir o que o motiva a ter algumas atitudes que muitas vezes você mesma não consegue entender.</p>
+          <p>Nas próximas páginas você irá reencontrar o poder oculto que existe no seu nome e de que maneira a energia dos números pode ser utilizada ao seu favor em diversos aspectos da vida — além de alguns conselhos para perceber aspectos que você pode melhorar pelo seu próprio compromisso de auto aprimoramento.</p>
+          <p>As informações compiladas nesse documento se baseiam no Pitagorismo (ou Escola Pitagórica) fundado pelo grande filósofo <em>Pitágoras de Samos</em>, um dos principais matemáticos da Grécia Antiga. Pitágoras e seus discípulos desenvolveram uma concepção espiritual da existência humana que acreditava na reencarnação e no desenvolvimento das virtudes humanas durante a vida. Segundo eles, <strong>"tudo é número"</strong> — os números são a base da vida na terra e representam a harmonia e a ordem, sendo considerados a essência de todas as coisas de forma não apenas matemática, mas também mística e espiritual.</p>
+          <p>As informações reveladas aqui têm como objetivo facilitar a sua percepção do Universo visto como um Todo harmonioso, onde tudo emite uma vibração e tudo obedece a uma ordem representada pelos números. O presente mapa utiliza o método baseado nas teorias de Pitágoras onde os números de 1 a 9 estão associados a características específicas (positivas e negativas) que juntas abrangem todas as experiências da vida.</p>
+        </div>
+        <div class="pdf-pagina-footer">
+          <span>Chave da Essência · Numerologia Pitagórica</span>
+        </div>
+      </div>
+
+      <!-- RESUMO DO MAPA -->
+      <div class="pdf-pagina">
+        <div class="pdf-pagina-header">
+          <span class="pdf-marca-topo">Chave da Essência</span>
+        </div>
+        <h2 class="pdf-resumo-titulo">Análise do Mapa Numerológico</h2>
+        <p class="pdf-resumo-nome-linha" id="resumo-nome-linha"></p>
+        <div id="resumo-container"></div>
+        <div class="pdf-pagina-footer">
+          <span>Chave da Essência · Numerologia Pitagórica</span>
+        </div>
+      </div>
+
+      <!-- SECÇÕES A–G -->
+      <div id="pdf-secoes"></div>
+
+      <!-- ENCERRAMENTO -->
+      <div class="pdf-pagina pdf-encerramento">
+        <div class="pdf-pagina-header">
+          <span class="pdf-marca-topo">Chave da Essência</span>
+        </div>
+        <div class="pdf-enc-conteudo">
+          <div class="pdf-enc-ornamento">✦ &nbsp; ✦ &nbsp; ✦</div>
+          <h2 class="pdf-enc-titulo">Os números revelam o que a alma já sabe</h2>
+          <p class="pdf-enc-texto">Este mapa numerológico foi elaborado com base no método Pitagórico e tem como propósito ser um instrumento de autoconhecimento e expansão de consciência. As interpretações apresentadas são um convite à reflexão — você é o autor da sua própria jornada.</p>
+          <div class="pdf-enc-marca">Chave da Essência</div>
+          <p class="pdf-enc-sub">Numerologia Pitagórica</p>
+        </div>
+        <div class="pdf-pagina-footer">
+          <span>Chave da Essência · Numerologia Pitagórica</span>
+        </div>
+      </div>
+
+    </div><!-- fim #relatorio-wrapper -->
+  </div><!-- fim #pdf-template -->
 
   <script type="module">
     import { renderizarRelatorio } from '/src/relatorio.js';
@@ -84,10 +142,13 @@
 
     const dados = renderizarRelatorio();
 
-    document.getElementById('btn-voltar').addEventListener('click', () => {
-      window.location.href = '/';
-    });
+    // Preenche linha de nome no resumo
+    if (dados) {
+      const el = document.getElementById('resumo-nome-linha');
+      if (el) el.textContent = dados.nome + ' · ' + [dados.dia, dados.mes, dados.ano].join('/');
+    }
 
+    document.getElementById('btn-voltar').addEventListener('click', () => window.location.href = '/');
     document.getElementById('btn-pdf').addEventListener('click', () => {
       const d = JSON.parse(sessionStorage.getItem('numerologia_dados'));
       gerarPDF(d.nome);
