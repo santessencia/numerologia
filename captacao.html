@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chave da Essência — Descubra o seu Mapa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/style/main.css" />
+  <link rel="stylesheet" href="/style/captacao.css" />
+</head>
+<body>
+  <main class="cap-page">
+
+    <!-- Lado esquerdo — proposta de valor -->
+    <div class="cap-hero">
+      <img src="/assets/logo.svg" alt="Chave da Essência" class="cap-logo" />
+
+      <h1 class="cap-titulo">
+        Descubra o que os<br/>
+        <em>números do seu nome</em><br/>
+        revelam sobre você
+      </h1>
+
+      <p class="cap-descricao">
+        Em poucos segundos, o seu Mapa Numerológico completo — baseado na
+        Escola Pitagórica — revela o seu Número do Destino, da Alma,
+        da Personalidade, a sua Lição de Vida e muito mais.
+      </p>
+
+      <ul class="cap-lista">
+        <li>
+          <span class="cap-check">✦</span>
+          <span>Mapa gerado na hora, personalizado com o seu nome</span>
+        </li>
+        <li>
+          <span class="cap-check">✦</span>
+          <span>Interpretações ricas em português, baseadas no método Pitagórico</span>
+        </li>
+        <li>
+          <span class="cap-check">✦</span>
+          <span>PDF completo para guardar e consultar sempre que quiser</span>
+        </li>
+        <li>
+          <span class="cap-check">✦</span>
+          <span>100% gratuito neste evento</span>
+        </li>
+      </ul>
+
+      <div class="cap-depoimento">
+        <p class="cap-dep-texto">
+          "Fiquei impressionada com a precisão. Parecia que me conhecia de cor."
+        </p>
+        <span class="cap-dep-autor">— participante da edição anterior</span>
+      </div>
+    </div>
+
+    <!-- Lado direito — formulário -->
+    <div class="cap-form-wrapper">
+      <div class="cap-form-card" id="card-form">
+        <p class="cap-form-pretitulo">Acesso gratuito</p>
+        <h2 class="cap-form-titulo">Quero o meu Mapa</h2>
+        <p class="cap-form-subtitulo">Preencha os dados abaixo para gerar o seu mapa numerológico personalizado</p>
+
+        <form id="form-captacao" novalidate>
+          <div class="cap-grupo">
+            <label class="cap-label" for="cap-nome">Nome completo</label>
+            <input class="cap-input" type="text" id="cap-nome" name="nome"
+              placeholder="Como consta na certidão de nascimento" autocomplete="name" required />
+          </div>
+
+          <div class="cap-grupo">
+            <label class="cap-label" for="cap-email">E-mail</label>
+            <input class="cap-input" type="email" id="cap-email" name="email"
+              placeholder="seu@email.com" autocomplete="email" required />
+          </div>
+
+          <div class="cap-grupo">
+            <label class="cap-label" for="cap-whatsapp">WhatsApp</label>
+            <input class="cap-input" type="tel" id="cap-whatsapp" name="whatsapp"
+              placeholder="(11) 99999-9999" autocomplete="tel" required />
+          </div>
+
+          <p class="cap-erro" id="cap-erro" style="display:none;"></p>
+
+          <button class="cap-submit" type="submit" id="cap-btn">
+            Gerar o meu Mapa Numerológico
+          </button>
+
+          <p class="cap-privacidade">
+            Seus dados são usados apenas para enviar conteúdos relacionados a este evento. Sem spam.
+          </p>
+        </form>
+      </div>
+
+      <!-- Estado de sucesso (oculto até submissão) -->
+      <div class="cap-form-card cap-sucesso" id="card-sucesso" style="display:none;">
+        <div class="cap-sucesso-icone">✦</div>
+        <h2 class="cap-form-titulo">Tudo certo!</h2>
+        <p class="cap-form-subtitulo">Os seus dados foram registados. Agora vamos revelar o seu mapa.</p>
+        <a class="cap-submit cap-submit-link" id="btn-ir-mapa" href="/index.html">
+          Continuar para o Mapa →
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module">
+    // URL do Google Apps Script — substituir após publicar o script
+    const SHEETS_URL = 'COLE_AQUI_O_URL_DO_APPS_SCRIPT';
+
+    const form     = document.getElementById('form-captacao');
+    const btnSubmit = document.getElementById('cap-btn');
+    const erroEl   = document.getElementById('cap-erro');
+    const cardForm = document.getElementById('card-form');
+    const cardSuc  = document.getElementById('card-sucesso');
+
+    function mostrarErro(msg) {
+      erroEl.textContent = msg;
+      erroEl.style.display = 'block';
+    }
+
+    function validarTel(tel) {
+      return tel.replace(/\D/g,'').length >= 10;
+    }
+
+    // Máscara simples para WhatsApp
+    document.getElementById('cap-whatsapp').addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g,'').slice(0,11);
+      if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      else if (v.length > 0) v = `(${v}`;
+      e.target.value = v;
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      erroEl.style.display = 'none';
+
+      const nome     = document.getElementById('cap-nome').value.trim();
+      const email    = document.getElementById('cap-email').value.trim();
+      const whatsapp = document.getElementById('cap-whatsapp').value.trim();
+
+      if (!nome)                 return mostrarErro('Por favor insira o seu nome completo.');
+      if (!email.includes('@'))  return mostrarErro('Por favor insira um e-mail válido.');
+      if (!validarTel(whatsapp)) return mostrarErro('Por favor insira um WhatsApp válido.');
+
+      btnSubmit.textContent = 'Registando…';
+      btnSubmit.disabled = true;
+
+      try {
+        // Se não houver URL configurado, avança directamente (modo demo/evento presencial)
+        if (SHEETS_URL !== 'COLE_AQUI_O_URL_DO_APPS_SCRIPT') {
+          await fetch(SHEETS_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome, email, whatsapp, data: new Date().toLocaleString('pt-BR') }),
+          });
+        }
+
+        // Guarda nome no sessionStorage para pré-preencher o formulário do mapa
+        sessionStorage.setItem('lead_nome', nome);
+        sessionStorage.setItem('lead_email', email);
+
+        cardForm.style.display = 'none';
+        cardSuc.style.display  = 'block';
+
+      } catch {
+        btnSubmit.textContent = 'Gerar o meu Mapa Numerológico';
+        btnSubmit.disabled = false;
+        mostrarErro('Ocorreu um erro. Por favor tente novamente.');
+      }
+    });
+  </script>
+</body>
+</html>

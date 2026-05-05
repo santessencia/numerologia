@@ -5,6 +5,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        captacao: 'captacao.html',
         resultado: 'resultado.html',
       },
     },
