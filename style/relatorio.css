@@ -334,8 +334,67 @@
    PRINT / PDF
 ══════════════════════════════════════════ */
 @media print {
+  /* Oculta tudo da página web */
+  body > * { display: none !important; }
+
+  /* Mostra apenas o template PDF */
+  #pdf-template {
+    display: block !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  /* Remove margens do body */
+  body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* Capa: fundo roxo visível na impressão */
+  .pdf-capa {
+    display: flex !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #2A1060 !important;
+    page-break-after: always;
+    height: 100vh;
+    min-height: 0;
+  }
+
+  /* Força impressão de cores de fundo em todo o template */
+  #pdf-template, #relatorio-wrapper, .pdf-pagina, .pdf-secao,
+  .cristal-afirmacao, .pot-item, .resumo-tabela td {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Quebras de página */
+  .pdf-pagina { page-break-after: always; }
+  .pdf-secao  { page-break-before: always; }
+  .pdf-encerramento { page-break-before: always; }
+  .pdf-boas-vindas  { page-break-after: always; }
+
+  /* Evita cortes a meio */
+  .pot-item, .resumo-tabela tr, .cristal-afirmacao {
+    page-break-inside: avoid;
+  }
+
+  /* Oculta botões e navegação */
   .btn-pdf-wrapper,
-  .btn-voltar { display: none !important; }
+  .btn-voltar,
+  .container > header,
+  .container > section,
+  .container > h2,
+  .cards-container,
+  .rel-footer { display: none !important; }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 14mm 14mm 18mm 14mm;
 }
 
 /* ══════════════════════════════════════════
