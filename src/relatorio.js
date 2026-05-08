@@ -1,6 +1,21 @@
 import { numeroDestino, numeroAlma, numeroPersonalidade, licaoVida, anoPessoal, anoAtualParaExibir, numerosAusentes, numerosExcesso } from './engine.js';
 import { ARCANOS, INTERPRETACOES, PALAVRAS_CHAVE, INTROS } from './interpretacoes.js';
 
+const CHAKRAS = {
+  1: { nome: 'Chakra Raiz',        cor: '#C0392B', emoji: '🔴', desc: 'Segurança, instinto e força vital. Você veio para construir bases sólidas.' },
+  2: { nome: 'Chakra Sacral',      cor: '#E67E22', emoji: '🟠', desc: 'Criatividade, emoção e fluxo. Você veio para sentir profundamente e criar.' },
+  3: { nome: 'Chakra do Plexo',    cor: '#F1C40F', emoji: '🟡', desc: 'Poder pessoal, clareza e ação. Você veio para transformar intenção em realidade.' },
+  4: { nome: 'Chakra Cardíaco',    cor: '#27AE60', emoji: '💚', desc: 'Amor, compaixão e equilíbrio. Você veio para curar e conectar.' },
+  5: { nome: 'Chakra da Garganta', cor: '#2980B9', emoji: '🔵', desc: 'Expressão, comunicação e verdade. Você veio para falar a sua verdade ao mundo.' },
+  6: { nome: 'Chakra do Plexo',    cor: '#27AE60', emoji: '💚', desc: 'Harmonia, responsabilidade e cura. Você veio para servir com amor.' },
+  7: { nome: 'Chakra do Terceiro Olho', cor: '#8E44AD', emoji: '🟣', desc: 'Intuição, visão e sabedoria interior. Você veio para enxergar além do visível.' },
+  8: { nome: 'Chakra Raiz e Coronário', cor: '#C0392B', emoji: '🔴', desc: 'Abundância, poder e transcendência. Você veio para equilibrar matéria e espírito.' },
+  9: { nome: 'Chakra Coronário',   cor: '#9B59B6', emoji: '👑', desc: 'Espiritualidade, universalidade e compaixão. Você veio para servir a humanidade.' },
+  11: { nome: 'Chakra do Terceiro Olho', cor: '#8E44AD', emoji: '🟣', desc: 'Iluminação e canalização. Número mestre — veio para inspirar e elevar consciências.' },
+  22: { nome: 'Chakra da Garganta e Coronário', cor: '#2980B9', emoji: '🔵', desc: 'Construção mestre. Número mestre — veio para materializar grandes sonhos para o coletivo.' },
+  33: { nome: 'Chakra Cardíaco Mestre', cor: '#27AE60', emoji: '💚', desc: 'Amor incondicional. Número mestre — veio para curar e ensinar com amor universal.' },
+};
+
 const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 
 function formatarData(dia, mes, ano) {
@@ -49,6 +64,21 @@ export function renderizarRelatorio() {
   document.getElementById('destino-numero').textContent = destino;
   document.getElementById('destino-arcano').textContent = ARCANOS[destino];
   document.getElementById('destino-texto').innerHTML = p(INTERPRETACOES.destino[destino]);
+
+  // Chakra do número de destino
+  const chakra = CHAKRAS[destino];
+  if (chakra) {
+    const chakraEl = document.getElementById('destino-chakra');
+    if (chakraEl) chakraEl.innerHTML = `
+      <div class="chakra-bloco">
+        <span class="chakra-emoji">${chakra.emoji}</span>
+        <div class="chakra-info">
+          <span class="chakra-label">Chakra do seu número</span>
+          <strong class="chakra-nome" style="color:${chakra.cor}">${chakra.nome}</strong>
+          <p class="chakra-desc">${chakra.desc}</p>
+        </div>
+      </div>`;
+  }
 
   // Cards web
   document.getElementById('cards-container').innerHTML = [

@@ -817,6 +817,136 @@
 }
 
 /* ══════════════════════════════════════════
+   CHAKRA DO NÚMERO
+══════════════════════════════════════════ */
+.chakra-bloco {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(75, 32, 144, 0.06);
+  border: 1px solid rgba(75, 32, 144, 0.15);
+  border-radius: 12px;
+  padding: 20px 28px;
+  margin: 28px auto 0;
+  max-width: 620px;
+}
+
+.chakra-emoji {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.chakra-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.chakra-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--texto-suave);
+}
+
+.chakra-nome {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.chakra-desc {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   CTA CONSULTA
+══════════════════════════════════════════ */
+.cta-consulta {
+  margin: 56px auto 0;
+  max-width: 680px;
+  padding: 0 24px;
+}
+
+.cta-consulta-inner {
+  background: linear-gradient(135deg, rgba(42, 16, 96, 0.05) 0%, rgba(196, 96, 122, 0.07) 100%);
+  border: 1px solid rgba(196, 96, 122, 0.25);
+  border-radius: 16px;
+  padding: 40px 36px;
+  text-align: center;
+}
+
+.cta-ornamento {
+  color: var(--rosa);
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+}
+
+.cta-titulo {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--roxo-escuro);
+  margin-bottom: 12px;
+}
+
+.cta-subtitulo {
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+
+.cta-opcoes {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.15s;
+  border: none;
+}
+
+.cta-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.cta-btn-principal {
+  background: #25D366;
+  color: #fff;
+}
+
+.cta-btn-vip {
+  background: linear-gradient(135deg, var(--roxo), #7A3A8A);
+  color: #fff;
+}
+
+.cta-nota {
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════
    RESPONSIVO
 ══════════════════════════════════════════ */
 @media (max-width: 600px) {
@@ -824,4 +954,8 @@
   .destino-numero-grande { font-size: 7.5rem; }
   .card { padding: 28px 24px; }
   .destino-texto p { font-size: 1rem; }
+  .chakra-bloco { flex-direction: column; text-align: center; }
+  .cta-consulta-inner { padding: 32px 24px; }
+  .cta-opcoes { flex-direction: column; align-items: center; }
+  .cta-btn { width: 100%; text-align: center; }
 }

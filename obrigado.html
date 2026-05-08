@@ -120,6 +120,14 @@
       window.location.href = '/captacao.html';
     }
 
+    // Aplica cupom automaticamente se vier na URL
+    const cupomAuto = new URLSearchParams(window.location.search).get('cupom');
+    if (cupomAuto && CUPONS[cupomAuto.toUpperCase()]) {
+      const plano = CUPONS[cupomAuto.toUpperCase()];
+      sessionStorage.setItem('plano_escolhido', plano);
+      setTimeout(() => window.location.href = '/index.html', 800);
+    }
+
     async function iniciarPagamento(plano) {
       const email    = sessionStorage.getItem('lead_email')    || '';
       const whatsapp = sessionStorage.getItem('lead_whatsapp') || '';

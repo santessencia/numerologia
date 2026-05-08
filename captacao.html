@@ -148,8 +148,9 @@
         }),
       }).catch(() => {});
 
-      // Redireciona para página de escolha de plano
-      window.location.href = '/obrigado.html';
+      // Redireciona para página de escolha de plano (preserva cupom se vier da URL)
+      const cupomUrl = new URLSearchParams(window.location.search).get('cupom');
+      window.location.href = cupomUrl ? `/obrigado.html?cupom=${encodeURIComponent(cupomUrl)}` : '/obrigado.html';
     });
   </script>
 </body>

@@ -37,6 +37,7 @@
       <div class="destino-arcano" id="destino-arcano"></div>
       <div class="linha-ornamento"><span>◆ &nbsp; ◆ &nbsp; ◆</span></div>
       <div class="destino-texto container" id="destino-texto"></div>
+      <div id="destino-chakra"></div>
     </section>
 
     <h2 class="cards-titulo">Os outros números do seu mapa</h2>
@@ -47,6 +48,24 @@
       <span class="rel-footer-marca">Chave da Essência</span>
       <p>Numerologia Pitagórica · Os números revelam o que a alma já sabe</p>
     </footer>
+
+    <!-- CTA Consulta -->
+    <div class="cta-consulta" id="cta-consulta">
+      <div class="cta-consulta-inner">
+        <div class="cta-ornamento">✦ &nbsp; ✦ &nbsp; ✦</div>
+        <h2 class="cta-titulo">Quer aprofundar o seu mapa?</h2>
+        <p class="cta-subtitulo">Uma consulta ao vivo revela o que os números escondem nas entrelinhas — padrões de vida, bloqueios energéticos e o próximo passo da sua jornada.</p>
+        <div class="cta-opcoes">
+          <a class="cta-btn cta-btn-principal" id="cta-wpp" href="#" target="_blank" rel="noopener">
+            💬 Agendar consulta presencial
+          </a>
+          <button class="cta-btn cta-btn-vip" id="cta-vip">
+            ✦ Quero o Mapa VIP
+          </button>
+        </div>
+        <p class="cta-nota">Vagas limitadas · Consulta presencial disponível durante o evento</p>
+      </div>
+    </div>
 
     <!-- Botão PDF -->
     <div class="btn-pdf-wrapper">
@@ -152,6 +171,17 @@
     document.getElementById('btn-pdf').addEventListener('click', () => {
       const d = JSON.parse(sessionStorage.getItem('numerologia_dados'));
       gerarPDF(d.nome);
+    });
+
+    // CTA — WhatsApp com mensagem pré-preenchida
+    const nomeCtA = sessionStorage.getItem('lead_nome') || '';
+    const wppLink = document.getElementById('cta-wpp');
+    const msg = encodeURIComponent(`Olá! Acabei de ver o meu Mapa Numerológico na Feira Mística e gostaria de agendar uma consulta presencial. Meu nome é ${nomeCtA}.`);
+    wppLink.href = `https://wa.me/5561999999999?text=${msg}`;
+
+    // CTA VIP — vai para obrigado com cupom VIP2026
+    document.getElementById('cta-vip').addEventListener('click', () => {
+      window.location.href = '/obrigado.html?cupom=VIP2026';
     });
   </script>
 </body>
